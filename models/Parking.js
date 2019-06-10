@@ -1,10 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
   var Parking = sequelize.define("Parking", {
-    first_name: {
+    firstName: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    last_name: {
+    lastName: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -17,17 +17,16 @@ module.exports = function(sequelize, DataTypes) {
     lat: DataTypes.FLOAT,
     long: DataTypes.FLOAT,
     spaces: DataTypes.INTEGER,
-    space_price: DataTypes.DECIMAL,
+    spacePrice: DataTypes.DECIMAL,
     units: {
       type: DataTypes.INTEGER,
       defaultValue: "month"
     },
-    space_type: DataTypes.STRING,
+    spaceType: DataTypes.STRING,
     availability: {
       type: DataTypes.BOOLEAN,
       defaultValue: true
     }
   });
-  
   return Parking;
 };
