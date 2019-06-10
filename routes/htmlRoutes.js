@@ -1,9 +1,9 @@
 var db = require("../models");
 
-module.exports = function (app) {
+module.exports = function(app) {
   // Load index page
-  app.get("/", function (req, res) {
-    db.Parking.findAll({}).then(function (dbParking) {
+  app.get("/", function(req, res) {
+    db.Parking.findAll({}).then(function(dbParking) {
       res.render("index", {
         msg: "Welcome!",
         examples: dbParking
@@ -12,7 +12,7 @@ module.exports = function (app) {
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function (req, res) {
+  app.get("/example/:id", function(req, res) {
     db.Parking.findOne({ where: { id: req.params.id } }).then(function (
       dbExample
     ) {
@@ -23,7 +23,7 @@ module.exports = function (app) {
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function (req, res) {
+  app.get("*", function(req, res) {
     res.render("404");
   });
 };
