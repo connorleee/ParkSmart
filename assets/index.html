@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!--Bootstrap CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!--Fontawesome CDN-->
+    <script src="https://kit.fontawesome.com/31161ee74c.js"></script>
+
+    <!--Google Fonts-->
+
+    <!--CSS File-->
+    <link rel="stylesheet" href="style.css" type="text/css" charset="utf-8">
+
+    <!--Javascript File-->
+    <script src="/js/index.js"></script>
+
+
+
+    <title>ParkSmart</title>
+</head>
+
+<body>
+    <div id="header">
+        <a class="logo">
+            <h1>ParkSmart <span style="font-size: 48px; color: Dodgerblue;"><i class="fas fa-car-side"></i></span></h1>
+        </a>
+    </div>
+
+    <div class="fluid-container">
+        <div class="row" id="location-post">
+
+            <form class="col-md-3">
+                <div class="form-group" id="location-box">
+                    <button id="search-button"><i class="fas fa-search"></i></button>
+                    <input type="text" id="location-input">
+                </div>
+
+            </form>
+
+            <!--Button trigger modal-->
+            <button class="btn btn-outline-primary col-md-2" data-toggle="modal" data-target=".post-form-lg"
+                id="post-button">Post Parking Space</button>
+
+            <!--Modal-->
+            <div class="modal fade post-form-lg" tabindex="-1" role="dialog" aria-labelledby="postFormLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="postFormLabel">Parking Space Owner Form</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <form>
+                            <div class="modal-body">
+
+                                <div class="form-group">
+
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" class="form-control" id="first-name" placeholder="First name"
+                                        required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="last-name">Last name</label>
+                                    <input type="text" class="form-control" id="last-name" placeholder="Last name"
+                                        required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="addressLine">Address</label>
+                                    <input type="text" class="form-control" id="addressLine" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="city">City </label>
+                                    <input type="text" class="form-control" id="vcity" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="state">State</label>
+                                    <input type="text" class="form-control" id="state" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="zip-code">Zip Code </label>
+                                    <input type="text" class="form-control" id="zip-code" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="number-of-space">Number of Parking Space </label>
+                                    <input type="number" min="1" max="100" class="form-control" id="number-of-space"  required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="price">Price Per Parking Space </label>
+                                    <input type="text" class="form-control" id="price" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone-number">Phone Number </label>
+                                    <input type="tel" name="phone-number" class="form-control" id="phone-number"
+                                        required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email </label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="parking-space-photo">Parking Space Photo</label>
+                                    <input type="file" class="form-control-file" id="parking-space-photo">
+                                </div>
+
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Post</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div id="map" class="col-md-12">
+
+        </div>
+
+    </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
