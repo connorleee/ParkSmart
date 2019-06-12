@@ -20,6 +20,7 @@
     <script src="https://kit.fontawesome.com/31161ee74c.js"></script>
 
     <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
 
     <!--CSS File-->
     <link rel="stylesheet" href="style.css" type="text/css" charset="utf-8">
@@ -30,11 +31,12 @@
 
 
     <title>ParkSmart</title>
+
 </head>
 
 <body>
     <div id="header">
-        <a class="logo">
+        <a href="homepage.html" class="logo">
             <h1>ParkSmart <span style="font-size: 48px; color: Dodgerblue;"><i class="fas fa-car-side"></i></span></h1>
         </a>
     </div>
@@ -104,7 +106,18 @@
 
                                 <div class="form-group">
                                     <label for="number-of-space">Number of Parking Space </label>
-                                    <input type="number" min="1" max="100" class="form-control" id="number-of-space"  required>
+                                    <input type="number" min="1" max="100" class="form-control" id="number-of-space"
+                                        required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="parking-space-type">Parking Space Type</label>
+                                    <select class="form-control" id="parking-space-type">
+                                        <option>Covered</option>
+                                        <option>Carport</option>
+                                        <option>Driveway</option>
+                                        <option>Other</option>
+                                    </select>
                                 </div>
 
                                 <div class="form-group">
