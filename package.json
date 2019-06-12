@@ -8,6 +8,7 @@
     "lint": "eslint --quiet .",
     "fix": "eslint --fix .",
     "test": "npm run lint && cross-env NODE_ENV=test mocha --reporter spec --exit"
+    "watch": "nodemon server.js"
   },
   "license": "ISC",
   "dependencies": {
