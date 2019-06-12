@@ -12,14 +12,14 @@ module.exports = function(sequelize, DataTypes) {
     email: DataTypes.STRING,
     house: DataTypes.INTEGER,
     street: DataTypes.STRING,
-    state: DataTypes.STRINGS,
+    state: DataTypes.STRING,
     zip: DataTypes.INTEGER,
     lat: DataTypes.FLOAT,
     long: DataTypes.FLOAT,
     spaces: DataTypes.INTEGER,
     spacePrice: DataTypes.DECIMAL,
     units: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       defaultValue: "month"
     },
     spaceType: DataTypes.STRING,
