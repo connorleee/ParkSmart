@@ -3,19 +3,21 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Parking.findAll({}).then(function(dbParking) {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbExamples
+        Parkings: dbParking
       });
     });
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
+  // Load Parking page and pass in an Parking by id
+  app.get("/Parking/:id", function(req, res) {
+    db.Parking.findOne({ where: { id: req.params.id } }).then(function(
+      dbParking
+    ) {
+      res.render("Parking", {
+        Parking: dbParking
       });
     });
   });
