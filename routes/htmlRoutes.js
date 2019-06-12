@@ -11,12 +11,11 @@ module.exports = function(app) {
     });
   });
 
-
   // Load Parking page and pass in an Parking by id
   app.get("/Parking/:id", function(req, res) {
-    db.Parking.findOne({ where: { id: req.params.id } }).then(function (
+    db.Parking.findOne({ where: { id: req.params.id } }).then(function(
       dbParking
-       ) {
+    ) {
       res.render("Parking", {
         Parking: dbParking
       });
