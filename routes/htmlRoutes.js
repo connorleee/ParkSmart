@@ -6,18 +6,18 @@ module.exports = function(app) {
     db.Parking.findAll({}).then(function(dbParking) {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbParking
+        Parkings: dbParking
       });
     });
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
+  // Load Parking page and pass in an Parking by id
+  app.get("/Parking/:id", function(req, res) {
     db.Parking.findOne({ where: { id: req.params.id } }).then(function (
-      dbExample
+      dbParking
     ) {
-      res.render("example", {
-        example: dbExample
+      res.render("Parking", {
+        Parking: dbParking
       });
     });
   });
