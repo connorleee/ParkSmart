@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "Meeko123",
+    "password": "P@SSword123",
     "database": "parksmart_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Meeko123",
+    "password": "P@SSword123",
     "database": "parksmart_db",
     "host": "localhost",
     "dialect": "mysql",
