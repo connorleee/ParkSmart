@@ -1,15 +1,15 @@
 {
   "development": {
     "username": "root",
-    "password": "P@$$word123",
-    "database": "exampledb",
+    "password": "P@SSword123",
+    "database": "parksmart_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "P@$$word123",
-    "database": "testdb",
+    "password": "P@SSword123",
+    "database": "parksmart_db",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
