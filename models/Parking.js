@@ -38,7 +38,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     lat: DataTypes.FLOAT,
     lon: DataTypes.FLOAT,
-    spaces: {
+    numSpaces: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
@@ -54,6 +54,14 @@ module.exports = function(sequelize, DataTypes) {
     availability: {
       type: DataTypes.BOOLEAN,
       defaultValue: true
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      defaultValue: new Date()
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      defaultValue: new Date()
     }
   });
   return Parking;
