@@ -27,7 +27,6 @@
     "eslint-plugin-prettier": "^3.1.0",
     "mocha": "^6.1.4",
     "prettier": "^1.17.1"
-<<<<<<< HEAD
   },
   "directories": {
     "test": "test"
@@ -42,7 +41,3 @@
   },
   "homepage": "https://github.com/connorleee/project-2#readme"
 }
-=======
-  }
-}
->>>>>>> master
