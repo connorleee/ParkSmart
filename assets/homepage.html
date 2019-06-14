@@ -6,6 +6,9 @@
     <!--Bootstrap CDN-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!--Bootstrap select plugin-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -16,20 +19,24 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+
     <!--Fontawesome CDN-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"
+        integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/31161ee74c.js"></script>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
 
 
     <!--Google Fonts-->
 
     <!--CSS File-->
     <link rel="stylesheet" href="style.css" type="text/css" charset="utf-8">
+    <script src="homepage.js"></script>
 
     <!--Javascript File-->
-    <script src="/js/index.js"></script>
 
 
 
@@ -45,21 +52,17 @@
 
     <div class="fluid-container" id="homepage-background">
         <h3 id="slogan">Make money with space. Save money with parking.</h3>
-
-
-        <form class=col-sm-6 id="location-box-homepage">
+        <form class=col-sm-4 id="location-box-homepage">
             <div class="form-group">
-                
-                <select class="form-control" id="location-input-homepage" placeholder="Select current location or enter zip code">
-                    <option> Current Location</option>
-                    <option>Enter zip code</option>
-                </select>
-                <a href="index.html" class="btn btn-info" id="search-button-homepage" role="button"><i class="fas fa-search"></i></a>
-               
-
+                <input class="form-control" list="current-location" id="user-choice" placeholder="Enter zip code or choose current location"/>
+                <datalist id="current-location">
+                    <option value="Current Location">
+                </datalist>
+                <a href="#" class="btn btn-info" id="search-button-homepage" role="button" onclick="searchCity()">
+                    <i class="fas fa-search"></i></a>
 
             </div>
-            
+
         </form>
 
     </div>

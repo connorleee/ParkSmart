@@ -18,24 +18,35 @@
 
 #location-box-homepage {
     position: relative;
-    margin-left: 25%;
-    margin-top: 2%;
+    margin-left: 33%;
+    margin-top: 3%;
+    height: 120px;
 
 }
 
-#location-input-homepage {
+#user-choice {
     height: 60px;
-    text-indent: 25px;
-    
+    text-indent: 20px;
+
+}
+
+::-webkit-input-placeholder {
+    font-size: 100%;
+ 
+}
+
+option {
+    font-size: 100%;
+    color: gray;
 }
 
 #search-button-homepage {
     position: absolute;
-    font-size: 130%;
+    font-size: 150%;
     padding: 0;
-    top: 25%;
-    left: 90%;
-    background-color: white;
+    top: 10%;
+    left: 85%;
+    background-color: transparent;
     border-style: none;
     color: dodgerblue;
    
@@ -112,6 +123,10 @@ select {
     margin-top: 0.7%;
     padding-top: 1px;
     margin-left: 52%;
+}
+
+label {
+    color: gray;
 }
 
 
