@@ -1,4 +1,4 @@
-USE parksmart_db;
+USE parkSmartDB;
 
 INSERT INTO parkings (firstName, lastName, phone, email, house, street, city, state, zip, lat, lon, numSpaces, spacePrice, spaceType)
 VALUES ("Connor", "Lee", "4258764321", "connor@parksmart.com", 722, "11th Ave E", "Seattle", "Washington", 98102, 47.625996, -122.317685, 1, 100, "Carport");
