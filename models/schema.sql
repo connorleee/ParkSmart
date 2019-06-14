@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS parksmart_db;
-CREATE DATABASE parksmart_db;
+DROP DATABASE IF EXISTS parkSmartDB;
+CREATE DATABASE parkSmartDB;
 
