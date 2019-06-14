@@ -8,8 +8,8 @@
   },
   "test": {
     "username": "root",
-    "password": "P@SSword123",
-    "database": "parksmart_db",
+    "password": " ",
+    "database": "parkSmartDB",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
