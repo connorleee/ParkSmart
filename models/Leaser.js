@@ -26,11 +26,11 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Leaser.associate = function(models) {
-    Leaser.hasMany(models.Parking, {
-      onDelete: "cascade"
-    });
-  };
+  //   Leaser.associate = function(models) {
+  //     Leaser.hasMany(models.Parking, {
+  //       onDelete: "cascade"
+  //     });
+  //   };
 
   return Leaser;
 };

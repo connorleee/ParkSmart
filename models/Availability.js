@@ -26,13 +26,13 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Availability.associate = function(models) {
-    Availability.belongsTo(models.Parking, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
+  //   Availability.associate = function(models) {
+  //     Availability.belongsTo(models.Parking, {
+  //       foreignKey: {
+  //         allowNull: false
+  //       }
+  //     });
+  //   };
 
   return Availability;
 };

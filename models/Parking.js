@@ -52,19 +52,19 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Parking.associate = function(models) {
-    Parking.belongsTo(models.Leaser, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
+  // Parking.associate = function(models) {
+  //   Parking.belongsTo(models.Leaser, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
 
-  Parking.associate = function(models) {
-    Parking.hasMany(models.Availability, {
-      onDelete: "cascade"
-    });
-  };
+  // Parking.associate = function(models) {
+  //   Parking.hasMany(models.Availability, {
+  //     onDelete: "cascade"
+  //   });
+  // };
 
   return Parking;
 };

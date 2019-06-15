@@ -10,7 +10,7 @@ module.exports = {
   },
   test: {
     username: "root",
-    password: "P@SSword123",
+    password: process.env.DB_PASS,
     database: "parkSmartDB",
     host: "localhost",
     dialect: "mysql",

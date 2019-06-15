@@ -4,6 +4,7 @@ module.exports = function(app) {
   // Get all Parkings
   app.get("/api/Parkings", function(req, res) {
     db.Parking.findAll({}).then(function(parkSmartDB) {
+      console.log("HEllp");
       res.json(parkSmartDB);
     });
   });
