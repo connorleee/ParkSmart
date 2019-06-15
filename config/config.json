@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "P@$$word123",
-    "database": "exampledb",
+    "password": "",
+    "database": "parkSmartDB",
     "host": "localhost",
     "dialect": "mysql"
   },
