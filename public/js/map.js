@@ -1,3 +1,23 @@
+function preloadLocationValue() {
+  //load the city and state name from local storage to location box
+  var locationField = document.getElementById('location-input');
+  var preloadValue = localStorage["city"];
+
+  locationField.value = preloadValue + ", " + localStorage["state"];
+
+  //load the street number, street name, city, state and zip code from local storage to the form area
+
+  document.getElementById('form_address').value = localStorage["street_number"] + " " + localStorage["street_name"]
+
+  document.getElementById('form_city').value = localStorage["city"];
+
+  document.getElementById('form_state').value = localStorage["state"];
+
+  document.getElementById('zip-code').value = localStorage["zip_code"];
+
+}
+
+window.onload = preloadLocationValue;
 // This example adds a search box to a map, using the Google Place Autocomplete
 // feature. People can enter geographical searches. The search box will return a
 // pick list containing a mix of places and predicted search terms.
@@ -19,14 +39,14 @@ function initAutocomplete() {
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
   // Bias the SearchBox results towards current map's viewport.
-  map.addListener("bounds_changed", function() {
+  map.addListener("bounds_changed", function () {
     searchBox.setBounds(map.getBounds());
   });
 
   let markers = [];
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.
-  searchBox.addListener("places_changed", function() {
+  searchBox.addListener("places_changed", function () {
     let places = searchBox.getPlaces();
 
     if (places.length === 0) {
@@ -34,14 +54,14 @@ function initAutocomplete() {
     }
 
     // Clear out the old markers.
-    markers.forEach(function(marker) {
+    markers.forEach(function (marker) {
       marker.setMap(null);
     });
     markers = [];
 
     // For each place, get the icon, name and location.
     let bounds = new google.maps.LatLngBounds();
-    places.forEach(function(place) {
+    places.forEach(function (place) {
       if (!place.geometry) {
         console.log("Returned place contains no geometry");
         return;
