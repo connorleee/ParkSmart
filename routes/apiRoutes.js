@@ -4,7 +4,10 @@ module.exports = function(app) {
   // Get all Parkings
   app.get("/api/Parkings", function(req, res) {
     db.Parking.findAll({}).then(function(parkSmartDB) {
+<<<<<<< HEAD
       console.log("HEllp");
+=======
+>>>>>>> 60cb0a2e1f1fa7f032ccc1673e7bccefaefeb4d7
       res.json(parkSmartDB);
     });
   });
