@@ -2,9 +2,21 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Load index page
-  app.get("/", function(req, res) {
+  //app.get("/", function(req, res) {
+    //db.Parking.findAll({}).then(function(dbParking) {
+      //res.render("index", {
+       /* input: "currentlocation",
+        msg: "Welcome!",
+        Parkings: dbParking
+      });
+    });
+  });*/
+
+  app.get("/map/:input", function(req, res) {
+    var input = req.params.input;
     db.Parking.findAll({}).then(function(dbParking) {
-      res.render("index", {
+      res.render("map", {
+        searchInput: input,
         msg: "Welcome!",
         Parkings: dbParking
       });
