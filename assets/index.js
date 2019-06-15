@@ -1,7 +1,7 @@
 function preloadLocationValue() {
-    var locationField = document.getElementById('location-input');
-    var preloadValue = localStorage["searchInput"];
-	locationField.value = preloadValue;
+  let locationField = document.getElementById("location-input");
+  let preloadValue = localStorage.searchInput;
+  locationField.value = preloadValue;
 }
 
 window.onload = preloadLocationValue;
