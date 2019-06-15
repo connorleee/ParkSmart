@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Be2ge4r713$",
+    "password": "",
     "database": "parkSmartDB",
     "host": "localhost",
     "dialect": "mysql"

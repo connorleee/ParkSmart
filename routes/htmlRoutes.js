@@ -4,7 +4,6 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     db.Parking.findAll({}).then(function(result) {
-      console.log("hello!")
       res.render("index", {
         Parkings: result
       });
@@ -20,7 +19,7 @@ module.exports = function(app) {
       res.render("index", {
         msg: `Parking locations in ${req.params.zip} zip code.`,
         Parkings: result
-      }); 
+      });
     });
   });
 
