@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Leaser = sequelize.define("Leaser", {
+  var Users = sequelize.define("Users", {
     firstName: {
       type: DataTypes.STRING,
       allowNull: false
@@ -26,11 +26,11 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  //   Leaser.associate = function(models) {
-  //     Leaser.hasMany(models.Parking, {
+  //   Users.associate = function(models) {
+  //     Users.hasMany(models.Parking, {
   //       onDelete: "cascade"
   //     });
   //   };
 
-  return Leaser;
+  return Users;
 };
