@@ -2,7 +2,6 @@ $.ajax({
   method: "GET",
   url: "/api/Parkings/"
 }).then(function(response) {
-  // console.log(response)
   function initMap() {
     var center = { lat: 34.052235, lng: -118.243683 };
     var locations = [];
