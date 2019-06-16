@@ -4,10 +4,7 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     db.Parking.findAll({}).then(function(result) {
-      res.render("index", {
-        msg: "Welcome!",
-        Parkings: result
-      });
+      console.log("made it to home page");
     });
   });
 
