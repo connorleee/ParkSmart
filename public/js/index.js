@@ -20,9 +20,9 @@ function getCity() {
       //use google map api get current city, state, street number and street name
       var geocoder = new google.maps.Geocoder();
       var latlng = new google.maps.LatLng(lat, lng);
-      geocoder.geocode({ "latLng": latlng }, function (results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-          console.log(results);;
+      geocoder.geocode({ latLng: latlng }, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+          console.log(results);
           if (results[0]) {
             //find country name
             for (var i = 0; i < results[0].address_components.length; i++) {
@@ -32,7 +32,7 @@ function getCity() {
                 b++
               ) {
                 //find city and state
-                if (results[0].address_components[i].types[b] == "locality") {
+                if (results[0].address_components[i].types[b] === "locality") {
                   var city = results[0].address_components[i];
                   var state = results[0].address_components[i + 2];
                   console.log(city);
@@ -44,14 +44,16 @@ function getCity() {
                 }
                 //find street number
                 else if (
-                  results[0].address_components[i].types[b] == "street_number"
+                  results[0].address_components[i].types[b] === "street_number"
                 ) {
                   var street_number = results[0].address_components[i];
                   localStorage.street_number = street_number.short_name;
                 }
 
                 //find street name
-                else if (results[0].address_components[i].types[b] == "route") {
+                else if (
+                  results[0].address_components[i].types[b] === "route"
+                ) {
                   var street_name = results[0].address_components[i];
                   localStorage.street_name = street_name.short_name;
                 }
