@@ -3,11 +3,6 @@ $(document).ready(function() {
     method: "GET",
     url: "/api/Parkings/"
   }).then(function(response) {
-<<<<<<< HEAD
-    console.log("got here");
-
-=======
->>>>>>> 9014beec37d4d639a2ac5b9415f4f797fffdf4e9
     function initMap() {
       var center = {
         lat: 34.052235,
@@ -49,8 +44,6 @@ $(document).ready(function() {
     initMap();
   });
 });
-<<<<<<< HEAD
-=======
 
 function preloadLocationValue() {
   //load the city and state name from local storage to location box
@@ -150,4 +143,3 @@ function initAutocomplete() {
 }
 
 initAutocomplete();
->>>>>>> 9014beec37d4d639a2ac5b9415f4f797fffdf4e9
