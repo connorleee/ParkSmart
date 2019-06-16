@@ -3,8 +3,6 @@ $(document).ready(function() {
     method: "GET",
     url: "/api/Parkings/"
   }).then(function(response) {
-    console.log("got here");
-
     function initMap() {
       var center = {
         lat: 34.052235,
