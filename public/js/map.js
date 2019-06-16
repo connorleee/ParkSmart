@@ -1,8 +1,8 @@
-$(document).ready(function () {
+$(document).ready(function() {
   $.ajax({
     method: "GET",
     url: "/api/Parkings/"
-  }).then(function (response) {
+  }).then(function(response) {
     console.log("got here");
 
     function initMap() {
@@ -33,8 +33,8 @@ $(document).ready(function () {
         google.maps.event.addListener(
           marker,
           "click",
-          (function (marker, count) {
-            return function () {
+          (function(marker, count) {
+            return function() {
               infowindow.setContent(locations[count][0]);
               infowindow.open(map, marker);
             };
@@ -46,4 +46,3 @@ $(document).ready(function () {
     initMap();
   });
 });
-};

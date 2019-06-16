@@ -8,7 +8,7 @@ module.exports = function(app) {
         Parkings: result
       });
     });
-  });*/
+  });
 
   app.get("/zip/:zip", function(req, res) {
     db.Parking.findAll({
