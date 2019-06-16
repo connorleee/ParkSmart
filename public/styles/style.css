@@ -1,7 +1,7 @@
 /* Homepage CSS */
 
 #homepage-background {
-    background-image: url("/assets/img/background.jpg");
+    background-image: url("../assets/img/background.jpg");
     height: 100vh;
     background-size: cover;
     background-position: center;
