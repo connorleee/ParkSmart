@@ -4,6 +4,7 @@ module.exports = function(app) {
   // Get all Parkings
   app.get("/api/Parkings", function(req, res) {
     db.Parking.findAll({}).then(function(parkSmartDB) {
+      console.log(parkSmartDB);
       const latLong = [];
       for (let i = 0; i < parkSmartDB.length; i++) {
         let name = `${parkSmartDB[i].dataValues.firstName} ${parkSmartDB[i].dataValues.lastName}`;
