@@ -8,7 +8,8 @@ function searchCity() {
 }
 
 //If user choose the current location option and click the search button, the Google API will get the current city and state of the user
-function getCity() {
+function getCity(event) {
+  console.log("getCity running");
   event.preventDefault();
   console.log(navigator.geolocation);
   if (navigator.geolocation) {
@@ -76,5 +77,6 @@ function getCity() {
 }
 
 $("#search-button-homepage").on("click", function(event) {
-  getCity();
+  console.log("search button clicked");
+  getCity(event);
 });
