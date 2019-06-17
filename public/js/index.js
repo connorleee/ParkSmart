@@ -8,7 +8,6 @@ function searchCity() {
 }
 
 //If user choose the current location option and click the search button, the Google API will get the current city and state of the user
-
 function getCity() {
   event.preventDefault();
   console.log(navigator.geolocation);
@@ -60,7 +59,7 @@ function getCity() {
 
                 //find zip code
                 else if (
-                  results[0].address_components[i].types[b] == "postal_code"
+                  results[0].address_components[i].types[b] === "postal_code"
                 ) {
                   var zip_code = results[0].address_components[i];
                   localStorage.zip_code = zip_code.short_name;
@@ -75,3 +74,7 @@ function getCity() {
     console.log("geo not working");
   }
 }
+
+$("#search-button-homepage").on("click", function(event) {
+  getCity();
+});

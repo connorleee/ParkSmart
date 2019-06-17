@@ -134,4 +134,13 @@ a:hover {
     text-decoration: none;
 }
 
+#map {
+    height: 960px;
+    overflow: auto
+}
+
+#mapContainer {
+    margin: 0px;
+    padding: 0px;
+}
 
