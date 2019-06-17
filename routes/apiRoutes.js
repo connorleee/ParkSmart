@@ -4,7 +4,32 @@ module.exports = function(app) {
   // Get all Parkings
   app.get("/api/Parkings", function(req, res) {
     db.Parking.findAll({}).then(function(parkSmartDB) {
-      res.json(parkSmartDB);
+      // console.log(parkSmartDB);
+      const parkingSpaces = [];
+      for (let i = 0; i < parkSmartDB.length; i++) {
+        let lat = parkSmartDB[i].dataValues.lat;
+        let long = parkSmartDB[i].dataValues.lon;
+        let name = `${parkSmartDB[i].dataValues.firstName} ${parkSmartDB[i].dataValues.lastName}`;
+        let phone = parkSmartDB[i].dataValues.phone;
+        let email = parkSmartDB[i].dataValues.email;
+        let price = parkSmartDB[i].dataValues.spacePrice;
+        let spaceType = parkSmartDB[i].dataValues.spaceType;
+        let numSpaces = parkSmartDB[i].dataValues.numSpaces;
+        let photo = parkSmartDB[i].dataValues.photo;
+        let unit = [
+          lat,
+          long,
+          name,
+          phone,
+          email,
+          price,
+          spaceType,
+          numSpaces,
+          photo
+        ];
+        parkingSpaces.push(unit);
+      }
+      res.send(parkingSpaces);
     });
   });
 
