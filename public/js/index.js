@@ -23,7 +23,7 @@ function clear() {
   localStorage["street_number"] = "";
   localStorage["zip_code"] = "";
   localStorage["lat"] = "";
-  localStorage["lng"]="";
+  localStorage["lng"] = "";
 }
 
 function getCity() {
