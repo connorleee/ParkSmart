@@ -34,7 +34,9 @@ module.exports = function(sequelize, DataTypes) {
     },
     zip: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      len: [6],
+      isNumeric: true
     },
     lat: DataTypes.FLOAT,
     lon: DataTypes.FLOAT,
@@ -55,6 +57,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       defaultValue: true
     },
+    photo: DataTypes.STRING,
     createdAt: {
       type: DataTypes.DATE,
       defaultValue: new Date()
@@ -64,5 +67,20 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: new Date()
     }
   });
+
+  // Parking.associate = function(models) {
+  //   Parking.belongsTo(models.Users, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
+
+  // Parking.associate = function(models) {
+  //   Parking.hasMany(models.Availability, {
+  //     onDelete: "cascade"
+  //   });
+  // };
+
   return Parking;
 };

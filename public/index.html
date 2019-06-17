@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -20,8 +19,9 @@
 
     <!--jQuery CDN-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDe3ACEOVSMG8gSoqVpoVR-nasrqSTkTFo" type="text/javascript"></script>
-   
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBA4FtugKJ7u2P_8_6e4L0R1zpydPPRTd4"
+        type="text/javascript"></script>
+
 
     <!--Bootstrap select plugin-->
     <link rel="stylesheet"
@@ -38,20 +38,26 @@
     <!--Google Fonts-->
 
     <!--CSS File-->
-    <link rel="stylesheet" href="/styles/style.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./styles/style.css" type="text/css" charset="utf-8">
 
     <!--Javascript File-->
-    <script src="/js/index.js"></script>
+    <script src="./js/index.js"></script>
 
 
     <title>ParkSmart</title>
 </head>
 
 <body>
-    <div id="header">
-        <a class="logo">
-            <h1>ParkSmart <span style="font-size: 48px; color: Dodgerblue;"><i class="fas fa-car-side"></i></span></h1>
-        </a>
+    <div class="fluid-container">
+        <div class="row">
+            <div id="header" class="col-sm-12">
+                <a class="logo">
+                    <h1>ParkSmart <span style="font-size: 48px; color: Dodgerblue;"><i
+                                class="fas fa-car-side"></i></span>
+                    </h1>
+                </a>
+            </div>
+        </div>
     </div>
 
     <div class="fluid-container" id="homepage-background">
@@ -64,7 +70,7 @@
                 <datalist id="current-location">
                     <option value="Current Location">
                 </datalist>
-                <button class="btn btn-info" id="search-button-homepage" role="button">
+                <button class="btn btn-info" id="search-button-homepage" role="button" onclick="getInput()">
                     <i class="fas fa-search"></i></button>
 
             </div>
@@ -73,12 +79,16 @@
 
     </div>
 
-        <script>
-         $("#search-button-homepage").on("click", function getLocation() {
-           getCity();
+    <!-- <script>
+        $("#search-button-homepage").on("click", function getLocation() {
+            if("#user-choice" = "Curret location"){
+            getCity();}
+            else {
+            getZip();
+            }
         });
-        
-    </script>
+
+    </script> -->
 
 
 

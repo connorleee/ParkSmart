@@ -16,6 +16,9 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
+    <!--jQuery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <!--Fontawesome CDN-->
     <script src="https://kit.fontawesome.com/31161ee74c.js"></script>
 
@@ -23,10 +26,10 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
 
     <!--CSS File-->
-    <link rel="stylesheet" href="/styles/style.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="./styles/style.css" type="text/css" charset="utf-8">
 
     <!--Javascript File-->
-    <script src="/js/map.js"></script>
+    <script src="./js/map.js"></script>
 
 
 
@@ -35,15 +38,21 @@
 </head>
 
 <body>
-    <div id="header">
-        <a href="index.html" class="logo">
-            <h1>ParkSmart <span style="font-size: 48px; color: Dodgerblue;"><i class="fas fa-car-side"></i></span></h1>
-        </a>
-    </div>
+
 
     <div class="fluid-container">
+        <div class="row">
+            <div id="header" class="col-sm-12">
+                <a href="index.html" class="logo">
+                    <h1>ParkSmart <span style="font-size: 48px; color: Dodgerblue;"><i
+                                class="fas fa-car-side"></i></span>
+                    </h1>
+                </a>
+            </div>
+        </div>
+
         <div class="row" id="location-post">
-            
+
             <!--location box which will load current city, state or zip code from local storage-->
             <form class="col-md-3">
                 <div class="form-group" id="location-box">
@@ -85,7 +94,7 @@
 
                                 <div class="form-group">
                                     <label for="addressLine">Address</label>
-                                    <input type="text" class="form-control" id="form_address"  required>
+                                    <input type="text" class="form-control" id="form_address" required>
                                 </div>
 
                                 <div class="form-group">
@@ -153,19 +162,16 @@
         </div>
     </div>
 
+    <div class="container-fluid" id="mapContainer">
+        <div id="map"></div>
 
-
-    <div class="row">
-        <div id="map" class="col-md-12">
-
-        </div>
-
+        <!--Javascript File-->
+        <script src="./js/map.js"></script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBA4FtugKJ7u2P_8_6e4L0R1zpydPPRTd4&callback=initMap"
+            async defer></script>
+   
     </div>
-
-    </div>
-
-
-
 </body>
 
 </html>
