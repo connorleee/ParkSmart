@@ -1,0 +1,186 @@
+/* Index page CSS */
+
+#homepage-background {
+    background-image: url("../assets/img/background.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#slogan {
+    color: rgb(213, 213, 230);
+    text-align: center;
+    padding-top: 10%;
+    font-family: 'Merriweather', serif;
+    font-size: 200%;
+
+}
+
+#location-box-homepage {
+    position: relative;
+    margin-left: 31%;
+    margin-top: 3%;
+    height: 120px;
+
+}
+
+#user-choice {
+    height: 60px;
+    text-indent: 20px;
+
+}
+
+/*::-webkit-input-placeholder {
+    font-size: 100%;
+ 
+}*/
+
+option {
+    font-size: 100%;
+    color: gray;
+}
+
+#search-button-homepage {
+    position: absolute;
+    font-size: 150%;
+    padding: 0;
+    top: 10%;
+    left: 85%;
+    background-color: transparent;
+    border-style: none;
+    color: dodgerblue;
+   
+    
+}
+
+select {
+    font-family: 'FontAwesome', 'Second Font Name';
+    
+}
+
+
+
+
+/* Map Page CSS */
+#header {
+    height: 80px;
+    position: relative;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(193, 201, 193);
+    border-width: 0.3px;
+}
+
+
+.logo {
+    position: absolute;
+    left: 38%;
+    font-size: 60%;
+    padding: 10px 0;
+  
+    
+}
+
+.logo h1 {
+    color: dodgerblue;
+}
+
+#location-post {
+    height: 50px;
+    margin: 0;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(193, 201, 193);
+    border-width: 0.3px;
+
+}
+
+
+#location-input {
+    width: 100%;
+    margin-left: 15%;
+    margin-top: 3%;
+    text-indent: 15px;
+    border-color: dodgerblue;
+    border-radius: 3px;
+    border-width: 1px;
+   
+}
+
+#search-button {
+    position:absolute;
+    left: 100%;
+    margin-top: 3.5%;   
+    font-size: 15px;
+    color: dodgerblue;
+    background-color: white;
+    border-style: none;
+    padding: 0px;
+
+}
+
+#post-button {
+    font-size: 15px;
+    height: 28px;
+    margin-top: 0.7%;
+    padding-top: 1px;
+    margin-left: 52%;
+}
+
+label {
+    color: gray;
+}
+
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Mdeia Query */
+@media only screen and (max-width: 600px) {
+    .logo {
+        left: 30%;
+    }
+
+    #slogan {
+       font-size: 170%;
+       padding-top: 15%;
+    }
+
+    #location-box-homepage {
+        position: relative;
+        margin-left: 31%;
+        margin-top: 8%;
+        height: 110px;
+
+    }
+
+
+    #search-button-homepage {
+        position: absolute;
+    font-size: 110%;
+    padding: 0;
+    top: 16%;
+    left: 82%;
+    background-color: transparent;
+    border-style: none;
+    color: dodgerblue;
+
+    }
+
+    #user-choice {
+        height: 60px;
+        text-indent: 0px;
+        font-size: 13px;
+    
+    }
+}
+
+#map {
+    height: 960px;
+    overflow: auto
+}
+
+#mapContainer {
+    margin: 0px;
+    padding: 0px;
+}
+
