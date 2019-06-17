@@ -16,6 +16,9 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
+    <!--jQuery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <!--Fontawesome CDN-->
     <script src="https://kit.fontawesome.com/31161ee74c.js"></script>
 
@@ -159,19 +162,16 @@
         </div>
     </div>
 
+    <div class="container-fluid" id="mapContainer">
+        <div id="map"></div>
 
-
-    <div class="row">
-        <div id="map" class="col-md-12">
-
-        </div>
-
+        <!--Javascript File-->
+        <script src="./js/map.js"></script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBA4FtugKJ7u2P_8_6e4L0R1zpydPPRTd4&callback=initMap"
+            async defer></script>
+   
     </div>
-
-    </div>
-
-
-
 </body>
 
 </html>

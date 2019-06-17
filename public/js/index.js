@@ -56,21 +56,23 @@ function getCity() {
                   break;
                 }
                 //find street number
-                else if (results[0].address_components[i].types[b] == "street_number") {
+                else if (
+                  results[0].address_components[i].types[b] === "street_number"
+                ) {
                   var street_number = results[0].address_components[i];
-                  localStorage["street_number"] = street_number.short_name;
+                  localStorage.street_number = street_number.short_name;
                 }
 
                 //find street name
                 else if (results[0].address_components[i].types[b] === "route") {
                   var street_name = results[0].address_components[i];
-                  localStorage["street_name"] = street_name.short_name;
+                  localStorage.street_name = street_name.short_name;
                 }
 
                 //find zip code
                 else if (results[0].address_components[i].types[b] === "postal_code") {
                   var zip_code = results[0].address_components[i];
-                  localStorage["zip_code"] = zip_code.short_name;
+                  localStorage.zip_code = zip_code.short_name;
                 }
               }
             }
@@ -80,5 +82,7 @@ function getCity() {
         }
       });
     });
+  } else {
+    console.log("geo not working");
   }
 }

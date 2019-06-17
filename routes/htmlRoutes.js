@@ -2,26 +2,11 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Load index page
-  //app.get("/", function(req, res) {
-  //db.Parking.findAll({}).then(function(dbParking) {
-  //res.render("index", {
-  /* input: "currentlocation",
-        msg: "Welcome!",
-        Parkings: dbParking
-      });
+  app.get("/", function(req, res) {
+    db.Parking.findAll({}).then(function(result) {
+      console.log("made it to home page");
     });
-  });*/
-
-  /*app.get("/map/:input", function(req, res) {
-    var input = req.params.input;
-    db.Parking.findAll({}).then(function(dbParking) {
-      res.render("map", {
-        searchInput: input,
-        msg: "Welcome!",
-        Parkings: result
-      });
-    });
-  });*/
+  });
 
   app.get("/zip/:zip", function(req, res) {
     db.Parking.findAll({
