@@ -22,6 +22,8 @@ function clear() {
   localStorage.street_name = "";
   localStorage.street_number = "";
   localStorage.zip_code = "";
+  localStorage.lat = "";
+  localStorage.lng = "";
 }
 
 function getCity() {
@@ -33,6 +35,9 @@ function getCity() {
     navigator.geolocation.getCurrentPosition(function success(position) {
       var lat = position.coords.latitude;
       var lng = position.coords.longitude;
+      localStorage.lat = lat;
+      localStorage.lng = lng;
+
       //use google map api get current city, state, street number and street name
       var geocoder = new google.maps.Geocoder();
       var latlng = new google.maps.LatLng(lat, lng);
