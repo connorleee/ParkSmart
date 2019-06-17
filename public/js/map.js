@@ -1,3 +1,31 @@
+function preloadLocationValue() {
+  //load the city and state name from local storage to location box
+  var locationField = document.getElementById("location-input");
+  var preloadValue = localStorage["user-input"];
+
+  locationField.value = preloadValue + localStorage.state;
+
+  //load the street number, street name, city, state and zip code from local storage to the form area
+
+  document.getElementById("form_address").value =
+    localStorage.street_number + " " + localStorage.street_name;
+
+  document.getElementById("form_city").value = localStorage.city;
+
+  document.getElementById("form_state").value = localStorage.state;
+
+  document.getElementById("zip-code").value = localStorage.zip_code;
+}
+
+window.onload = preloadLocationValue;
+// This example adds a search box to a map, using the Google Place Autocomplete
+// feature. People can enter geographical searches. The search box will return a
+// pick list containing a mix of places and predicted search terms.
+
+// This example requires the Places library. Include the libraries=places
+// parameter when you first load the API. For example:
+// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
 // eslint-disable-next-line no-unused-vars
 function initMap() {
   $.ajax({
@@ -22,7 +50,7 @@ function initMap() {
     });
     var marker, count;
     for (count = 0; count < locations.length; count++) {
-      var contentString = `<div id='content'>${placeholder}</div>`;
+      var contentString = `<div id='content'>${locations[count][8]}</div>`;
 
       var infowindow = new google.maps.InfoWindow({ content: contentString });
       marker = new google.maps.Marker({
@@ -45,23 +73,4 @@ function initMap() {
       );
     }
   });
-}
-
-function preloadLocationValue() {
-  //load the city and state name from local storage to location box
-  var locationField = document.getElementById("location-input");
-  var preloadValue = localStorage.city;
-
-  locationField.value = preloadValue + ", " + localStorage.state;
-
-  //load the street number, street name, city, state and zip code from local storage to the form area
-
-  document.getElementById("form_address").value =
-    localStorage.street_number + " " + localStorage.street_name;
-
-  document.getElementById("form_city").value = localStorage.city;
-
-  document.getElementById("form_state").value = localStorage.state;
-
-  document.getElementById("zip-code").value = localStorage.zip_code;
 }

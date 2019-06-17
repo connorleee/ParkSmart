@@ -1,16 +1,32 @@
-//If user choose to input zip code in the location box on the homepage, the data will be stored in the local storage
-function searchCity() {
-  console.log("i am here");
+// eslint-disable-next-line no-unused-vars
+function getInput() {
+  if (document.getElementById("user-choice").value === "Current Location") {
+    getCity();
+  } else {
+    getZip();
+  }
+}
 
-  var searchInput = document.getElementById("user-choice").value;
-  localStorage.searchInput = searchInput;
+function getZip() {
+  event.preventDefault();
+  clear();
+  var zipInput = document.getElementById("user-choice").value;
+  localStorage["user-input"] = zipInput;
+  localStorage.zip_code = zipInput;
   window.location.href = "map.html";
 }
 
-//If user choose the current location option and click the search button, the Google API will get the current city and state of the user
-function getCity(event) {
-  console.log("getCity running");
+function clear() {
+  localStorage.state = "";
+  localStorage.city = "";
+  localStorage.street_name = "";
+  localStorage.street_number = "";
+  localStorage.zip_code = "";
+}
+
+function getCity() {
   event.preventDefault();
+  clear();
   console.log(navigator.geolocation);
   if (navigator.geolocation) {
     //use HTML5 navigator get lat and lng
@@ -37,6 +53,7 @@ function getCity(event) {
                   var state = results[0].address_components[i + 2];
                   console.log(city);
                   localStorage.city = city.short_name;
+                  localStorage["user-input"] = city.short_name + ", ";
                   localStorage.state = state.short_name;
                   window.location.href = "map.html";
 
@@ -68,6 +85,8 @@ function getCity(event) {
               }
             }
           }
+        } else {
+          console.log("geo not working");
         }
       });
     });
@@ -75,8 +94,3 @@ function getCity(event) {
     console.log("geo not working");
   }
 }
-
-$("#search-button-homepage").on("click", function(event) {
-  console.log("search button clicked");
-  getCity(event);
-});

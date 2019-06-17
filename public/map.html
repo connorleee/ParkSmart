@@ -28,19 +28,29 @@
     <!--CSS File-->
     <link rel="stylesheet" href="./styles/style.css" type="text/css" charset="utf-8">
 
+    <!--Javascript File-->
+    <script src="./js/map.js"></script>
+
+
 
     <title>ParkSmart</title>
 
 </head>
 
 <body>
-    <div id="header">
-        <a href="index.html" class="logo">
-            <h1>ParkSmart <span style="font-size: 48px; color: Dodgerblue;"><i class="fas fa-car-side"></i></span></h1>
-        </a>
-    </div>
+
 
     <div class="fluid-container">
+        <div class="row">
+            <div id="header" class="col-sm-12">
+                <a href="index.html" class="logo">
+                    <h1>ParkSmart <span style="font-size: 48px; color: Dodgerblue;"><i
+                                class="fas fa-car-side"></i></span>
+                    </h1>
+                </a>
+            </div>
+        </div>
+
         <div class="row" id="location-post">
 
             <!--location box which will load current city, state or zip code from local storage-->
@@ -160,6 +170,7 @@
         <script
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxL8wTFpAewfVBh0PgA3r8uPVhWppaRRs&callback=initMap"
             async defer></script>
+   
     </div>
 </body>
 
