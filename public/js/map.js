@@ -26,16 +26,6 @@ window.onload = preloadLocationValue;
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-function initAutocomplete() {
-  let map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 47.6062, lng: -122.3321 },
-// $(document).ready(function() {
-//   $.ajax({
-//     method: "GET",
-//     url: "/api/Parkings/"
-//   }).then(function(response) {
-//     console.log(response);
-
 function initMap() {
   console.log("init map running");
   var center = {
@@ -74,5 +64,3 @@ function initMap() {
     );
   }
 }
-
-
