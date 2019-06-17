@@ -92,3 +92,43 @@ function initMap() {
     }
   });
 }
+
+$("#leaseForm").on("submit", function(event){
+  event.preventDefault();
+
+  var address;
+  var houseNumber = $("#form_house").val().trim();
+  var street = $("#form_address").val().trim();
+  var city = $("#form_city").val().trim();
+  var state = $("#form_state").val().trim();
+  var zip = $("#zip-code").val().trim();
+
+  // address = ``
+
+  var parkingData = {
+    firstName: $("#first-name").val().trim(),
+    lastName: $("#last-name").val().trim(),
+    phone: $("#phone-number").val().trim(),
+    email: $("#email").val().trim(),
+    house: houseNumber,
+    street: street,
+    city: city,
+    state: state,
+    zip: zip,
+    // lat: ,
+    // long: ,
+    numSpaces: $("#number-of-space").val().trim(),
+    spacePrice: $("#price").val().trim(),
+    spaceType: $("#parking-space-type").val().trim(),
+    photo: $("#parking-space-photo").val().trim(),
+  };
+
+  $.ajax({
+    method: "POST",
+    url: "/api/Parkings/",
+    data: parkingData
+  }).then(function(response){
+    console.log("Parking space posted!");
+    location.reload();
+  });
+});
