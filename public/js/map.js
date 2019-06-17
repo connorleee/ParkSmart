@@ -102,8 +102,24 @@ $("#leaseForm").on("submit", function(event){
   var city = $("#form_city").val().trim();
   var state = $("#form_state").val().trim();
   var zip = $("#zip-code").val().trim();
+  var lat;
+  var long;
 
-  // address = ``
+  address = `${houseNumber} ${street}, ${city}, ${state}`;
+
+  var geocoder = new google.maps.Geocoder();
+  geocoder.geocode( { "address": address}, function(results, status) {
+    if (status === "OK") {
+      lat = results[0].geometry.location.lat();
+      long = results[0].geometry.location.lat();
+    } else {
+      alert("Geocode was not successful for the following reason: " + status);
+    }
+  });
+  
+  console.log("lat: " + lat);
+  console.log("long: " + long);
+
 
   var parkingData = {
     firstName: $("#first-name").val().trim(),
@@ -115,8 +131,8 @@ $("#leaseForm").on("submit", function(event){
     city: city,
     state: state,
     zip: zip,
-    // lat: ,
-    // long: ,
+    lat: lat,
+    long: long,
     numSpaces: $("#number-of-space").val().trim(),
     spacePrice: $("#price").val().trim(),
     spaceType: $("#parking-space-type").val().trim(),
@@ -127,8 +143,9 @@ $("#leaseForm").on("submit", function(event){
     method: "POST",
     url: "/api/Parkings/",
     data: parkingData
-  }).then(function(response){
+  }).then(function(){
     console.log("Parking space posted!");
-    location.reload();
+    initMap();
+    // location.reload();
   });
 });
