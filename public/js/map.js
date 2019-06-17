@@ -1,9 +1,9 @@
 function preloadLocationValue() {
   //load the city and state name from local storage to location box
   var locationField = document.getElementById('location-input');
-  var preloadValue = localStorage["city"];
+  var preloadValue = localStorage["user-input"];
 
-  locationField.value = preloadValue + ", " + localStorage["state"];
+  locationField.value = preloadValue + localStorage["state"];
 
   //load the street number, street name, city, state and zip code from local storage to the form area
 
