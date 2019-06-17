@@ -10,9 +10,30 @@ function getInput() {
 function getZip() {
   event.preventDefault();
   clear();
+
   var zipInput = document.getElementById("user-choice").value;
+
+  var lat = "";
+  var lng = "";
+  var address = zipInput;
+  var geocoder = new google.maps.Geocoder();
+
+  // eslint-disable-next-line prettier/prettier
+  geocoder.geocode({ "address": address }, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+      lat = results[0].geometry.location.lat();
+      lng = results[0].geometry.location.lng();
+    } else {
+      console.log(
+        "Geocode was not successful for the following reason: " + status
+      );
+    }
+  });
+
   localStorage["user-input"] = zipInput;
   localStorage.zip_code = zipInput;
+  localStorage.lat = lat;
+  localStorage.lng = lng;
   window.location.href = "map.html";
 }
 
