@@ -1,7 +1,7 @@
 {
-  "name": "smartPark",
+  "name": "smartpark",
   "version": "1.0.0",
-  "description": "Project 2 Starter",
+  "description": "end the urban parking epidemic",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
