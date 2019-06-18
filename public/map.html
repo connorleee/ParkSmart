@@ -54,17 +54,24 @@
         <div class="row" id="location-post">
 
             <!--location box which will load current city, state or zip code from local storage-->
-            <form class="col-md-3">
-                <div class="form-group" id="location-box">
-                    <button id="search-button"><i class="fas fa-search"></i></button>
-                    <input type="text" id="location-input">
-                </div>
+            <div class="col-sm-4">
+                <form>
+                    <div class="form-group" id="location-box">
+                        
+                        <button id="search-button"><i class="fas fa-search"></i></button>
+                        <input type="text" id="location-input" class="col-sm-10">
+                   
+                    </div>
 
-            </form>
+                </form>
+            </div>
+            
 
             <!--Button trigger modal-->
-            <button class="btn btn-outline-primary col-md-2" data-toggle="modal" data-target=".post-form-lg"
+            <div class="col-sm-4">
+            <button class="btn btn-outline-primary col-sm-10" data-toggle="modal" data-target=".post-form-lg"
                 id="post-button">Post Parking Space</button>
+            </div>
 
             <!--Modal-->
             <div class="modal fade post-form-lg" tabindex="-1" role="dialog" aria-labelledby="postFormLabel"
@@ -170,7 +177,7 @@
         <script
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBA4FtugKJ7u2P_8_6e4L0R1zpydPPRTd4&callback=initMap"
             async defer></script>
-   
+
     </div>
 </body>
 
