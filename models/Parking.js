@@ -39,7 +39,7 @@ module.exports = function(sequelize, DataTypes) {
       isNumeric: true
     },
     lat: DataTypes.FLOAT,
-    lon: DataTypes.FLOAT,
+    lng: DataTypes.FLOAT,
     numSpaces: {
       type: DataTypes.INTEGER,
       allowNull: false
