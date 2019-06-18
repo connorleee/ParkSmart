@@ -10,18 +10,41 @@ function getInput() {
 function getZip() {
   event.preventDefault();
   clear();
+
   var zipInput = document.getElementById("user-choice").value;
+
+  var lat = "";
+  var lng = "";
+  var geocoder = new google.maps.Geocoder();
+
   localStorage["user-input"] = zipInput;
-  localStorage["zip_code"] = zipInput;
-  window.location.href = "map.html";
+
+  localStorage.zip_code = zipInput;
+  var geocoder = new google.maps.Geocoder();
+  // eslint-disable-next-line prettier/prettier
+  geocoder.geocode({ "address": zipInput }, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+      lat = results[0].geometry.location.lat();
+      lng = results[0].geometry.location.lng();
+      localStorage.lat = lat;
+      localStorage.lng = lng;
+    } else {
+      console.log(
+        "Geocode was not successful for the following reason: " + status
+      );
+    }
+    window.location.href = "map.html";
+  });
 }
 
 function clear() {
-  localStorage["state"] = "";
-  localStorage["city"] = "";
-  localStorage["street_name"] = "";
-  localStorage["street_number"] = "";
-  localStorage["zip_code"] = "";
+  localStorage.state = "";
+  localStorage.city = "";
+  localStorage.street_name = "";
+  localStorage.street_number = "";
+  localStorage.zip_code = "";
+  localStorage.lat = "";
+  localStorage.lng = "";
 }
 
 function getCity() {
@@ -33,24 +56,31 @@ function getCity() {
     navigator.geolocation.getCurrentPosition(function success(position) {
       var lat = position.coords.latitude;
       var lng = position.coords.longitude;
+
+      localStorage.lat = lat;
+      localStorage.lng = lng;
       //use google map api get current city, state, street number and street name
       var geocoder = new google.maps.Geocoder();
       var latlng = new google.maps.LatLng(lat, lng);
-      geocoder.geocode({ "latLng": latlng }, function (results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-          console.log(results)
+      geocoder.geocode({ latLng: latlng }, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+          console.log(results);
           if (results[0]) {
             //find country name
             for (var i = 0; i < results[0].address_components.length; i++) {
-              for (var b = 0; b < results[0].address_components[i].types.length; b++) {
+              for (
+                var b = 0;
+                b < results[0].address_components[i].types.length;
+                b++
+              ) {
                 //find city and state
                 if (results[0].address_components[i].types[b] === "locality") {
                   var city = results[0].address_components[i];
                   var state = results[0].address_components[i + 2];
                   console.log(city);
-                  localStorage["city"] = city.short_name;
+                  localStorage.city = city.short_name;
                   localStorage["user-input"] = city.short_name + ", ";
-                  localStorage["state"] = state.short_name;
+                  localStorage.state = state.short_name;
                   window.location.href = "map.html";
 
                   break;
@@ -64,13 +94,17 @@ function getCity() {
                 }
 
                 //find street name
-                else if (results[0].address_components[i].types[b] === "route") {
+                else if (
+                  results[0].address_components[i].types[b] === "route"
+                ) {
                   var street_name = results[0].address_components[i];
                   localStorage.street_name = street_name.short_name;
                 }
 
                 //find zip code
-                else if (results[0].address_components[i].types[b] === "postal_code") {
+                else if (
+                  results[0].address_components[i].types[b] === "postal_code"
+                ) {
                   var zip_code = results[0].address_components[i];
                   localStorage.zip_code = zip_code.short_name;
                 }
