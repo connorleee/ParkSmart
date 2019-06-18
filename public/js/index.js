@@ -1,21 +1,72 @@
-//If user choose to input zip code in the location box on the homepage, the data will be stored in the local storage
-function searchCity() {
-  console.log("i am here");
-
-  var searchInput = document.getElementById("user-choice").value;
-  localStorage.searchInput = searchInput;
-  window.location.href = "map.html";
+// eslint-disable-next-line no-unused-vars
+function getInput() {
+  if (document.getElementById("user-choice").value === "Current Location") {
+    getCity();
+  } else {
+    getZip();
+  }
 }
 
-//If user choose the current location option and click the search button, the Google API will get the current city and state of the user
+function getZip() {
+  event.preventDefault();
+  clear();
+
+  var zipInput = document.getElementById("user-choice").value;
+
+  var lat = "";
+  var lng = "";
+  var address = zipInput;
+  var geocoder = new google.maps.Geocoder();
+
+  // eslint-disable-next-line prettier/prettier
+  geocoder.geocode({ "address": address }, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+      lat = results[0].geometry.location.lat();
+      lng = results[0].geometry.location.lng();
+    } else {
+      console.log(
+        "Geocode was not successful for the following reason: " + status
+      );
+    }
+  });
+
+  localStorage["user-input"] = zipInput;
+
+  localStorage.zip_code = zipInput;
+  var geocoder = new google.maps.Geocoder();
+  geocoder.geocode({ address: zipInput }, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+      lat = results[0].geometry.location.lat();
+      lng = results[0].geometry.location.lng();
+      localStorage.lat = lat;
+      localStorage.lng = lng;
+    }
+    window.location.href = "map.html";
+  });
+}
+
+function clear() {
+  localStorage.state = "";
+  localStorage.city = "";
+  localStorage.street_name = "";
+  localStorage.street_number = "";
+  localStorage.zip_code = "";
+  localStorage.lat = "";
+  localStorage.lng = "";
+}
+
 function getCity() {
   event.preventDefault();
+  clear();
   console.log(navigator.geolocation);
   if (navigator.geolocation) {
     //use HTML5 navigator get lat and lng
     navigator.geolocation.getCurrentPosition(function success(position) {
       var lat = position.coords.latitude;
       var lng = position.coords.longitude;
+
+      localStorage.lat = lat;
+      localStorage.lng = lng;
       //use google map api get current city, state, street number and street name
       var geocoder = new google.maps.Geocoder();
       var latlng = new google.maps.LatLng(lat, lng);
@@ -36,6 +87,7 @@ function getCity() {
                   var state = results[0].address_components[i + 2];
                   console.log(city);
                   localStorage.city = city.short_name;
+                  localStorage["user-input"] = city.short_name + ", ";
                   localStorage.state = state.short_name;
                   window.location.href = "map.html";
 
@@ -67,6 +119,8 @@ function getCity() {
               }
             }
           }
+        } else {
+          console.log("geo not working");
         }
       });
     });
@@ -74,7 +128,3 @@ function getCity() {
     console.log("geo not working");
   }
 }
-
-$("#search-button-homepage").on("click", function(event) {
-  getCity();
-});
