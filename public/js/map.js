@@ -69,7 +69,7 @@ function initMap() {
           return function() {
             infowindow.setContent("$" + locations[count][5]);
             infowindow.setContent(`<div id='content'>
-            <h4>$${locations[count][5]} per month</h4>
+            <h4>$${locations[count][5]} per day</h4>
             <p>${locations[count][6]}</p>
             <p>Contact for reservation: ${locations[count][4]}</p>
             <img class='photo' src='${locations[count][8]}' style='width: 450px'>
