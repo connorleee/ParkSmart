@@ -4,11 +4,11 @@ module.exports = function(app) {
   // Get all Parkings
   app.get("/api/Parkings", function(req, res) {
     db.Parking.findAll({}).then(function(parkSmartDB) {
-      // console.log(parkSmartDB);
+      console.log(parkSmartDB);
       const parkingSpaces = [];
       for (let i = 0; i < parkSmartDB.length; i++) {
         let lat = parkSmartDB[i].dataValues.lat;
-        let long = parkSmartDB[i].dataValues.lon;
+        let lng = parkSmartDB[i].dataValues.lng;
         let name = `${parkSmartDB[i].dataValues.firstName} ${parkSmartDB[i].dataValues.lastName}`;
         let phone = parkSmartDB[i].dataValues.phone;
         let email = parkSmartDB[i].dataValues.email;
@@ -18,7 +18,7 @@ module.exports = function(app) {
         let photo = parkSmartDB[i].dataValues.photo;
         let unit = [
           lat,
-          long,
+          lng,
           name,
           phone,
           email,
@@ -53,7 +53,7 @@ module.exports = function(app) {
   //     state: req.body.state,
   //     zip: req.body.zip,
   //     lat: req.body.lat,
-  //     long: req.body.long,
+  //     lng: req.body.lng,
   //     numSpaces: req.body.numSpaces,
   //     spacePrice: req.body.spacePrice,
   //     spaceType: req.body.spaceType,

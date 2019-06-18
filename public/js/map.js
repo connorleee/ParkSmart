@@ -51,12 +51,6 @@ function initMap() {
     });
     var marker, count;
     for (count = 0; count < locations.length; count++) {
-      // var contentString = `<div id='content'>
-      // <h3>$${locations[count][5]} per month</h3>
-      // <img class='photo' src='${locations[count][8]}' style='width: 100%>
-      // <h4>${locations[count][6]}</h4>
-      // </div>`;
-
       var infowindow = new google.maps.InfoWindow({
         maxWidth: 500
       });
@@ -96,21 +90,8 @@ $("#leaseForm").on("submit", function(event){
   var city = $("#form_city").val().trim();
   var state = $("#form_state").val().trim();
   var zip = $("#zip-code").val().trim();
-  var lat = "";
-  var lng = "";
 
   address = `${houseNumber} ${street}, ${city}, ${state}`;
-  console.log(address);
-
-  // var geocoder = new google.maps.Geocoder();
-  // geocoder.geocode( { "address": address}, function(results, status) {
-  //   if (status === "OK") {
-  //     lat = results[0].geometry.location.lat();
-  //     long = results[0].geometry.location.lat();
-  //   } else {
-  //     alert("Geocode was not successful for the following reason: " + status);
-  //   }
-  // });
   
   var geocoder = new google.maps.Geocoder();
   // eslint-disable-next-line prettier/prettier
@@ -118,47 +99,43 @@ $("#leaseForm").on("submit", function(event){
     console.log(results);
     
     if (status === google.maps.GeocoderStatus.OK) {
-      lat = results[0].geometry.location.lat();
-      lng = results[0].geometry.location.lng();
+      var lat = results[0].geometry.location.lat();
+      var lng = results[0].geometry.location.lng();
       console.log(`lat: ${lat}`);
       console.log(`lng: ${lng}`);
+
+      var parkingData = {
+        firstName: $("#first-name").val().trim(),
+        lastName: $("#last-name").val().trim(),
+        phone: $("#phone-number").val().trim(),
+        email: $("#email").val().trim(),
+        house: houseNumber,
+        street: street,
+        city: city,
+        state: state,
+        zip: zip,
+        lat: lat,
+        lng: lng,
+        numSpaces: $("#number-of-space").val().trim(),
+        spacePrice: $("#price").val().trim(),
+        spaceType: $("#parking-space-type").val().trim(),
+        photo: $("#parking-space-photo").val().trim(),
+      };
+    
+      $.ajax({
+        method: "POST",
+        url: "/api/Parkings/",
+        data: parkingData
+      }).then(function(){
+        console.log("Parking space posted!");
+        initMap();
+        location.reload();
+      });
     } else {
       console.log(
         "Geocode was not successful for the following reason: " + status
       );
-      window.location.href = "map.html";
     }
   });
 
-  console.log("lat: " + lat);
-  console.log("long: " + lng);
-
-
-  var parkingData = {
-    firstName: $("#first-name").val().trim(),
-    lastName: $("#last-name").val().trim(),
-    phone: $("#phone-number").val().trim(),
-    email: $("#email").val().trim(),
-    house: houseNumber,
-    street: street,
-    city: city,
-    state: state,
-    zip: zip,
-    lat: lat,
-    long: lng,
-    numSpaces: $("#number-of-space").val().trim(),
-    spacePrice: $("#price").val().trim(),
-    spaceType: $("#parking-space-type").val().trim(),
-    photo: $("#parking-space-photo").val().trim(),
-  };
-
-  $.ajax({
-    method: "POST",
-    url: "/api/Parkings/",
-    data: parkingData
-  }).then(function(){
-    console.log("Parking space posted!");
-    initMap();
-    // location.reload();
-  });
 });
