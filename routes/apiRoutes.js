@@ -4,7 +4,6 @@ module.exports = function(app) {
   // Get all Parkings
   app.get("/api/Parkings", function(req, res) {
     db.Parking.findAll({}).then(function(parkSmartDB) {
-      console.log(parkSmartDB);
       const parkingSpaces = [];
       for (let i = 0; i < parkSmartDB.length; i++) {
         let lat = parkSmartDB[i].dataValues.lat;
@@ -40,36 +39,12 @@ module.exports = function(app) {
     });
   });
 
-  // app.post("/api/Parkings", function(req, res) {
-  //   console.log(req.body);
-  //   db.Parking.create({
-  //     firstName: req.body.firstName,
-  //     lastName: req.body.lastName,
-  //     phone: req.body.phone,
-  //     email: req.body.email,
-  //     house: req.body.house,
-  //     street: req.body.street,
-  //     city: req.body.city,
-  //     state: req.body.state,
-  //     zip: req.body.zip,
-  //     lat: req.body.lat,
-  //     lng: req.body.lng,
-  //     numSpaces: req.body.numSpaces,
-  //     spacePrice: req.body.spacePrice,
-  //     spaceType: req.body.spaceType,
-  //     photo: req.body.photo
-  //   }).then(function() {
+  // // Delete an Parking by id
+  // app.delete("/api/Parkings/:id", function(req, res) {
+  //   db.Parking.destroy({ where: { id: req.params.id } }).then(function(
+  //     parkSmartDB
+  //   ) {
   //     res.json(parkSmartDB);
-  //     res.redirect("/map.html");
   //   });
   // });
-
-  // Delete an Parking by id
-  app.delete("/api/Parkings/:id", function(req, res) {
-    db.Parking.destroy({ where: { id: req.params.id } }).then(function(
-      parkSmartDB
-    ) {
-      res.json(parkSmartDB);
-    });
-  });
 };

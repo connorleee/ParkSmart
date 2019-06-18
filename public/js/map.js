@@ -71,6 +71,7 @@ function initMap() {
             infowindow.setContent(`<div id='content'>
             <h4>$${locations[count][5]} per month</h4>
             <p>${locations[count][6]}</p>
+            <p>Contact for reservation: ${locations[count][4]}</p>
             <img class='photo' src='${locations[count][8]}' style='width: 450px'>
             </div>`);
             infowindow.open(map, marker);
@@ -96,14 +97,10 @@ $("#leaseForm").on("submit", function(event){
   var geocoder = new google.maps.Geocoder();
   // eslint-disable-next-line prettier/prettier
   geocoder.geocode({ "address": address }, function(results, status) {
-    console.log(results);
-    
+    // console.log(results);
     if (status === google.maps.GeocoderStatus.OK) {
       var lat = results[0].geometry.location.lat();
       var lng = results[0].geometry.location.lng();
-      console.log(`lat: ${lat}`);
-      console.log(`lng: ${lng}`);
-
       var parkingData = {
         firstName: $("#first-name").val().trim(),
         lastName: $("#last-name").val().trim(),
@@ -137,5 +134,4 @@ $("#leaseForm").on("submit", function(event){
       );
     }
   });
-
 });
