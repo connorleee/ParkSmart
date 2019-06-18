@@ -104,26 +104,11 @@ select {
 #location-input {
     position: absolute;
     height: 30px;
-    padding: 0px;
-    text-indent: 15px;
     border-style: solid;
     border-color: dodgerblue;
     border-radius: 3px;
     border-width: 1px;
    
-}
-
-#search-button {
-    position:absolute;
-    left: 83%;
-    margin-top: 1%;   
-    font-size: 15px;
-    color: dodgerblue;
-    background-color: white;
-    border-style: none;
-    padding: 0px;
-    z-index: 10;
-
 }
 
 #post-button {
@@ -215,6 +200,7 @@ a:hover {
         margin-left: 60%;
         margin-top: -20%;
     }
+}
    
 
 @media only screen and (min-width: 600px) {
@@ -225,7 +211,6 @@ a:hover {
     }
     #location-box-homepage {
         position: relative;
-       
         margin-left: 10%;
         margin-top: 8%;
         height: 110px;
@@ -241,16 +226,14 @@ a:hover {
 
     /* map page */
     #location-box {
-        margin-top: 2%;
+        margin-top: 4%;
     }
 
-    #search-button {
-        margin-top: 2%;
-    }
 
     #post-button {
         margin-top: 4%;
     }
+}
 
     @media only screen and (min-width: 768px) {
         /* index page */
@@ -262,12 +245,13 @@ a:hover {
 
         }
         #search-button-homepage  {
-            left: 150%;
+            left: 160%;
         }
 
     }
 
     @media only screen and (min-width: 992px) {
+        /* index page */
         #search-button-homepage  {
             left: 135%;
         }
@@ -292,20 +276,12 @@ a:hover {
             margin-top: 2%;
         }
     
-        #search-button {
-            margin-top: 1%;
-        }
-    
         #post-button {
             margin-top: 2%;
         }
 
     }
 
-
-
-
-}
 
     
 
