@@ -42,10 +42,8 @@ function initMap() {
     console.log("Locations: ");
     console.log(locations);
     var center = {
-      // lat: parseFloat(localStorage.lat),
-      // lng: parseFloat(localStorage.lng)
-      lat: 47.608628,
-      lng: -122.335428
+      lat: parseFloat(localStorage.lat),
+      lng: parseFloat(localStorage.lng)
     };
     var map = new google.maps.Map(document.getElementById("map"), {
       zoom: 13,
