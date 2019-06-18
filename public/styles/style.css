@@ -54,9 +54,6 @@ select {
     
 }
 
-
-
-
 /* Map Page CSS */
 #header {
     height: 80px;
@@ -66,14 +63,11 @@ select {
     border-width: 0.3px;
 }
 
-
 .logo {
     position: absolute;
     left: 40%;
     font-size: 60%;
-    padding: 10px 0;
-  
-    
+    padding: 10px 0;  
 }
 
 .logo h1 {
@@ -86,7 +80,6 @@ select {
     border-bottom-style: solid;
     border-bottom-color: rgb(193, 201, 193);
     border-width: 0.3px;
-
 }
 
 #location-box {
@@ -108,7 +101,6 @@ select {
     border-color: dodgerblue;
     border-radius: 3px;
     border-width: 1px;
-   
 }
 
 #post-button {
@@ -131,8 +123,9 @@ a:hover {
 
 
 #map {
-    height: 580px;
-    overflow: auto
+    height: 870px;
+    width: 100%;
+    overflow: auto;
 }
 
 #mapContainer {
@@ -158,9 +151,7 @@ a:hover {
         margin-left: 10%;
         margin-top: 8%;
         height: 110px;
-
     }
-
 
     #search-button-homepage {
     position: absolute;
@@ -171,7 +162,6 @@ a:hover {
     background-color: transparent;
     border-style: none;
     color: dodgerblue;
-
     }
 
     #user-choice {
@@ -200,7 +190,7 @@ a:hover {
         margin-left: 60%;
         margin-top: -20%;
     }
-}
+
    
 
 @media only screen and (min-width: 600px) {
