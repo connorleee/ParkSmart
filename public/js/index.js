@@ -32,8 +32,8 @@ function getZip() {
       console.log(
         "Geocode was not successful for the following reason: " + status
       );
-      window.location.href = "map.html";
     }
+    window.location.href = "map.html";
   });
 }
 

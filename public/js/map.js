@@ -96,24 +96,42 @@ $("#leaseForm").on("submit", function(event){
   var city = $("#form_city").val().trim();
   var state = $("#form_state").val().trim();
   var zip = $("#zip-code").val().trim();
-  var lat;
-  var long;
+  var lat = "";
+  var lng = "";
 
   address = `${houseNumber} ${street}, ${city}, ${state}`;
   console.log(address);
 
+  // var geocoder = new google.maps.Geocoder();
+  // geocoder.geocode( { "address": address}, function(results, status) {
+  //   if (status === "OK") {
+  //     lat = results[0].geometry.location.lat();
+  //     long = results[0].geometry.location.lat();
+  //   } else {
+  //     alert("Geocode was not successful for the following reason: " + status);
+  //   }
+  // });
+  
   var geocoder = new google.maps.Geocoder();
-  geocoder.geocode( { "address": address}, function(results, status) {
-    if (status === "OK") {
+  // eslint-disable-next-line prettier/prettier
+  geocoder.geocode({ "address": address }, function(results, status) {
+    console.log(results);
+    
+    if (status === google.maps.GeocoderStatus.OK) {
       lat = results[0].geometry.location.lat();
-      long = results[0].geometry.location.lat();
+      lng = results[0].geometry.location.lng();
+      console.log(`lat: ${lat}`);
+      console.log(`lng: ${lng}`);
     } else {
-      alert("Geocode was not successful for the following reason: " + status);
+      console.log(
+        "Geocode was not successful for the following reason: " + status
+      );
+      window.location.href = "map.html";
     }
   });
-  
+
   console.log("lat: " + lat);
-  console.log("long: " + long);
+  console.log("long: " + lng);
 
 
   var parkingData = {
@@ -127,7 +145,7 @@ $("#leaseForm").on("submit", function(event){
     state: state,
     zip: zip,
     lat: lat,
-    long: long,
+    long: lng,
     numSpaces: $("#number-of-space").val().trim(),
     spacePrice: $("#price").val().trim(),
     spaceType: $("#parking-space-type").val().trim(),
