@@ -50,7 +50,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     units: {
       type: DataTypes.STRING,
-      defaultValue: "month"
+      defaultValue: "day"
     },
     spaceType: DataTypes.STRING,
     availability: {
