@@ -59,6 +59,7 @@ module.exports = function(app) {
   //     spaceType: req.body.spaceType,
   //     photo: req.body.photo
   //   }).then(function() {
+  //     res.json(parkSmartDB);
   //     res.redirect("/map.html");
   //   });
   // });

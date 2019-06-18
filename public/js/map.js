@@ -7,14 +7,10 @@ function preloadLocationValue() {
   locationField.value = preloadValue + localStorage.state;
 
   //load the street number, street name, city, state and zip code from local storage to the form area
-
-  document.getElementById("form_address").value =
-    localStorage.street_number + " " + localStorage.street_name;
-
+  document.getElementById("form_house").value = localStorage.street_number;
+  document.getElementById("form_address").value = localStorage.street_name;
   document.getElementById("form_city").value = localStorage.city;
-
   document.getElementById("form_state").value = localStorage.state;
-
   document.getElementById("zip-code").value = localStorage.zip_code;
 }
 
@@ -106,6 +102,7 @@ $("#leaseForm").on("submit", function(event){
   var long;
 
   address = `${houseNumber} ${street}, ${city}, ${state}`;
+  console.log(address);
 
   var geocoder = new google.maps.Geocoder();
   geocoder.geocode( { "address": address}, function(results, status) {
