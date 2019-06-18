@@ -32,27 +32,27 @@ function getZip() {
 
   localStorage["user-input"] = zipInput;
 
-  localStorage["zip_code"] = zipInput;
+  localStorage.zip_code = zipInput;
   var geocoder = new google.maps.Geocoder();
-  geocoder.geocode({ "address": zipInput }, function (results, status) {
+  geocoder.geocode({ address: zipInput }, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
       lat = results[0].geometry.location.lat();
       lng = results[0].geometry.location.lng();
-      localStorage["lat"] = lat;
-      localStorage["lng"] = lng;
+      localStorage.lat = lat;
+      localStorage.lng = lng;
     }
     window.location.href = "map.html";
   });
 }
 
 function clear() {
-  localStorage["state"] = "";
-  localStorage["city"] = "";
-  localStorage["street_name"] = "";
-  localStorage["street_number"] = "";
-  localStorage["zip_code"] = "";
-  localStorage["lat"] = "";
-  localStorage["lng"] = "";
+  localStorage.state = "";
+  localStorage.city = "";
+  localStorage.street_name = "";
+  localStorage.street_number = "";
+  localStorage.zip_code = "";
+  localStorage.lat = "";
+  localStorage.lng = "";
 }
 
 function getCity() {
@@ -65,13 +65,12 @@ function getCity() {
       var lat = position.coords.latitude;
       var lng = position.coords.longitude;
 
-      localStorage["lat"] = lat;
-      localStorage["lng"] = lng;
+      localStorage.lat = lat;
+      localStorage.lng = lng;
       //use google map api get current city, state, street number and street name
       var geocoder = new google.maps.Geocoder();
       var latlng = new google.maps.LatLng(lat, lng);
-      geocoder.geocode({ "latLng": latlng }, function (results, status) {
-
+      geocoder.geocode({ latLng: latlng }, function(results, status) {
         if (status === google.maps.GeocoderStatus.OK) {
           console.log(results);
           if (results[0]) {

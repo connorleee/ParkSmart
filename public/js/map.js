@@ -92,3 +92,60 @@ function initMap() {
     }
   });
 }
+
+$("#leaseForm").on("submit", function(event){
+  event.preventDefault();
+
+  var address;
+  var houseNumber = $("#form_house").val().trim();
+  var street = $("#form_address").val().trim();
+  var city = $("#form_city").val().trim();
+  var state = $("#form_state").val().trim();
+  var zip = $("#zip-code").val().trim();
+  var lat;
+  var long;
+
+  address = `${houseNumber} ${street}, ${city}, ${state}`;
+
+  var geocoder = new google.maps.Geocoder();
+  geocoder.geocode( { "address": address}, function(results, status) {
+    if (status === "OK") {
+      lat = results[0].geometry.location.lat();
+      long = results[0].geometry.location.lat();
+    } else {
+      alert("Geocode was not successful for the following reason: " + status);
+    }
+  });
+  
+  console.log("lat: " + lat);
+  console.log("long: " + long);
+
+
+  var parkingData = {
+    firstName: $("#first-name").val().trim(),
+    lastName: $("#last-name").val().trim(),
+    phone: $("#phone-number").val().trim(),
+    email: $("#email").val().trim(),
+    house: houseNumber,
+    street: street,
+    city: city,
+    state: state,
+    zip: zip,
+    lat: lat,
+    long: long,
+    numSpaces: $("#number-of-space").val().trim(),
+    spacePrice: $("#price").val().trim(),
+    spaceType: $("#parking-space-type").val().trim(),
+    photo: $("#parking-space-photo").val().trim(),
+  };
+
+  $.ajax({
+    method: "POST",
+    url: "/api/Parkings/",
+    data: parkingData
+  }).then(function(){
+    console.log("Parking space posted!");
+    initMap();
+    // location.reload();
+  });
+});
