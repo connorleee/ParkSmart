@@ -13,7 +13,7 @@ ParkSmart is a Full Stack MVC Application that helps drivers find a parking spac
 ## Usage
 User can search on homepage for available parking spaces in a specific Zip Code or by City & State. You are then presented with a map showing markers of available spaces and their corresponding address at which point you can book a spot.
 
-<-- screenshot -->
+![Screenshot](public/assets/img/parkSmart.png)
 
 ## Technologies Used
 - ESLint - Tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
@@ -62,11 +62,11 @@ Before you can install Node, you’ll need to install two other applications. Fo
 ## Support
 - Open a new issue [here](https://github.com/connorlee/project-2/issues/new) for support.
 
-## Author
-- **Connor Lee** - <a href="https://connorleee.github.io/portfolio" target="_blank">https://connorleee.github.io/portfolio</a>
-- **Hongliao Xiong** - <a href="#" target="_blank">URL GOES HERE</a>
-- **Kevin LeRoy** - <a href="https://kevinleroy.me" target="_blank">https://kevinleroy.me</a>
-- **Nursaid Saidmakhmudov** - <a href="https://nursaids.github.io/workingPortfolio/" target="_blank">https://nursaids.github.io/workingPortfolio/</a>
+## Team
+- **Connor Lee** (Back-End Design & Development) - <a href="https://connorleee.github.io/portfolio" target="_blank">https://connorleee.github.io/portfolio</a>
+- **Hongliao Xiong** (Front-End Design) - <a href="https://sbhgn0721.github.io/portfolio-website-updated/" target="_blank">https://sbhgn0721.github.io/portfolio-website-updated/</a>
+- **Kevin LeRoy** (Back-End Development) - <a href="https://kevinleroy.me" target="_blank">https://kevinleroy.me</a>
+- **Nursaid Saidmakhmudov** (Back-End Development) - <a href="https://nursaids.github.io/workingPortfolio/" target="_blank">https://nursaids.github.io/workingPortfolio/</a>
 
 ## License
 
