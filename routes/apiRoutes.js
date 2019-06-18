@@ -32,28 +32,10 @@ module.exports = function(app) {
     });
   });
 
-  /* firstName, lastName, phone, email, house, street, city, 
-   state, zip, lat, lon, numSpaces, spacePrice, spaceType, photo */
+  // Create a new Parking
   app.post("/api/Parkings", function(req, res) {
-    console.log(req, res);
-    db.Parking.create({
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      phone: req.body.phone,
-      email: req.body.email,
-      house: req.body.house,
-      street: req.body.street,
-      city: req.body.city,
-      state: req.body.state,
-      zip: req.body.zip,
-      lat: req.body.lat,
-      long: req.body.long,
-      numSpaces: req.body.numSpaces,
-      spacePrice: req.body.spacePrice,
-      spaceType: req.body.spaceType,
-      photo: req.body.photo
-    }).then(function() {
-      res.redirect("/map.html");
+    db.Parking.create(req.body).then(function(parkSmartDB) {
+      res.json(parkSmartDB);
     });
   });
 
