@@ -65,11 +65,11 @@ module.exports = function(app) {
   // });
 
   // Delete an Parking by id
-  app.delete("/api/Parkings/:id", function(req, res) {
-    db.Parking.destroy({ where: { id: req.params.id } }).then(function(
-      parkSmartDB
-    ) {
-      res.json(parkSmartDB);
-    });
-  });
+  // app.delete("/api/Parkings/:id", function(req, res) {
+  //   db.Parking.destroy({ where: { id: req.params.id } }).then(function(
+  //     parkSmartDB
+  //   ) {
+  //     res.json(parkSmartDB);
+  //   });
+  // });
 };

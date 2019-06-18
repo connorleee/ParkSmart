@@ -141,6 +141,6 @@ $("#leaseForm").on("submit", function(event){
   }).then(function(){
     console.log("Parking space posted!");
     initMap();
-    // location.reload();
+    location.reload();
   });
 });
