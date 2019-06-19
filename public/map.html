@@ -55,7 +55,7 @@
         <div class="row" id="location-post">
 
             <!--location box which will load current city, state or zip code from local storage-->
-            <form class="col-md-3">
+            <form class="col-sm-4">
                 <div class="form-group" id="location-box">
                     <!-- <button id="search-button"><i class="fas fa-search"></i></button> -->
                     <input class="text-center" type="text" id="location-input">
@@ -63,8 +63,10 @@
             </form>
 
             <!--Button trigger modal-->
-            <button class="btn btn-outline-primary col-md-2" data-toggle="modal" data-target=".post-form-lg"
+            <div class="col-sm-4">
+            <button class="btn btn-outline-primary col-sm-10" data-toggle="modal" data-target=".post-form-lg"
                 id="post-button">Post Parking Space</button>
+            </div>
 
             <!--Modal-->
             <div class="modal fade post-form-lg" tabindex="-1" role="dialog" aria-labelledby="postFormLabel"
