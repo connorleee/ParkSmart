@@ -63,7 +63,7 @@ Before you can install Node, you’ll need to install two other applications. Fo
 - Open a new issue [here](https://github.com/connorlee/project-2/issues/new) for support.
 
 ## Team
-- **Connor Lee** (Back-End Design & Development) - <a href="https://connorleee.github.io/portfolio" target="_blank">https://connorleee.github.io/portfolio</a>
+- **Connor Lee** (Back-End Design & Development) - <a href="https://connorleee.github.io/portfolio-official/" target="_blank">https://connorleee.github.io/portfolio-official/</a>
 - **Hongliao Xiong** (Front-End Design) - <a href="https://sbhgn0721.github.io/portfolio-website-updated/" target="_blank">https://sbhgn0721.github.io/portfolio-website-updated/</a>
 - **Kevin LeRoy** (Back-End Development) - <a href="https://kevinleroy.me" target="_blank">https://kevinleroy.me</a>
 - **Nursaid Saidmakhmudov** (Back-End Development) - <a href="https://nursaids.github.io/workingPortfolio/" target="_blank">https://nursaids.github.io/workingPortfolio/</a>
