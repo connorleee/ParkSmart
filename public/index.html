@@ -1,74 +1,112 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <!--Bootstrap CDN-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
 
     <!--jQuery CDN-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBA4FtugKJ7u2P_8_6e4L0R1zpydPPRTd4"
-        type="text/javascript"></script>
+
+    <!-- Google Maps API -->
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMmGrf7YHV3Dzbsk5gAG0eXsowB_4CF-o"
+      type="text/javascript"
+    ></script>
 
     <!--Bootstrap select plugin-->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
 
     <!--Fontawesome CDN-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"
-        integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"
+      integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E"
+      crossorigin="anonymous"
+    />
     <script src="https://kit.fontawesome.com/31161ee74c.js"></script>
 
     <!--CSS File-->
-    <link rel="stylesheet" href="./styles/style.css" type="text/css" charset="utf-8">
+    <link
+      rel="stylesheet"
+      href="./styles/style.css"
+      type="text/css"
+      charset="utf-8"
+    />
 
     <!--Javascript File-->
     <script src="./js/index.js"></script>
 
-
     <title>ParkSmart</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="fluid-container">
-        <div class="row">
-            <div id="header" class="col-sm-12">
-                <a class="logo">
-                    <h1>ParkSmart <span style="font-size: 48px; color: Dodgerblue;"><i
-                                class="fas fa-car-side"></i></span>
-                    </h1>
-                </a>
-            </div>
+      <div class="row">
+        <div id="header" class="col-sm-12">
+          <a class="logo">
+            <h1>
+              ParkSmart
+              <span style="font-size: 48px; color: Dodgerblue;"
+                ><i class="fas fa-car-side"></i
+              ></span>
+            </h1>
+          </a>
         </div>
+      </div>
     </div>
 
     <div class="fluid-container" id="homepage-background">
-        <h3 id="slogan">Make money with space. Save money with parking.</h3>
+      <h3 id="slogan">Make money with space. Save money with parking.</h3>
 
-        <form class=col-sm-4 id="location-box-homepage">
-            <div class="form-group">
-                <input class="form-control" list="current-location" id="user-choice"
-                    placeholder="Enter zip code or choose current location" />
-                <datalist id="current-location">
-                    <option value="Current Location">
-                </datalist>
-                <button class="btn btn-info" id="search-button-homepage" role="button" onclick="getInput()">
-                    <i class="fas fa-search"></i></button>
-            </div>
-        </form>
+      <form class="col-sm-4" id="location-box-homepage">
+        <div class="form-group">
+          <input
+            class="form-control"
+            list="current-location"
+            id="user-choice"
+            placeholder="Enter zip code or choose current location"
+          />
+          <datalist id="current-location">
+            <option value="Current Location"> </option>
+          </datalist>
+
+          <button
+            class="btn btn-info"
+            id="search-button-homepage"
+            role="button"
+            onclick="getInput()"
+          >
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </form>
     </div>
-</body>
-
+  </body>
 </html>
