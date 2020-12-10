@@ -62,15 +62,14 @@ function initMap() {
         marker,
         "click",
         (function(marker, count) {
+          // prettier-ignore
           return function() {
             infowindow.setContent("$" + locations[count][5]);
             infowindow.setContent(`<div id='content'>
             <h4>$${locations[count][5]} per day</h4>
             <p>${locations[count][6]}</p>
             <p>Contact for reservation: ${locations[count][4]}</p>
-            <img class='photo' src='${
-              locations[count][8]
-            }' style='width: 450px'>
+            <img class='photo' src='${locations[count][8]}' style='width: 450px'>
             </div>`);
             infowindow.open(map, marker);
           };
