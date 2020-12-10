@@ -9,6 +9,13 @@
   "plugins": [
     "prettier"
   ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+        "jsx": true
+    }
+  },
   "rules": {
     "no-duplicate-case": "error",
     "no-empty": "error",
@@ -34,6 +41,6 @@
       "error",
       "always"
     ],
-    "prettier/prettier": "error"
+    "prettier/prettier": "warn"
   }
 }
