@@ -27,10 +27,8 @@ window.onload = preloadLocationValue;
 function initMap() {
   $.ajax({
     method: "GET",
-    url: "/api/Parkings/"
+    url: "/api/Parkings/",
   }).then(function(response) {
-    console.log("ajax response: ");
-    console.log(response);
     var locations = [];
     for (let i = 0; i < response.length; i++) {
       var subLocations = [];
@@ -39,20 +37,18 @@ function initMap() {
       }
       locations.push(subLocations);
     }
-    console.log("Locations: ");
-    console.log(locations);
     var center = {
       lat: parseFloat(localStorage.lat),
-      lng: parseFloat(localStorage.lng)
+      lng: parseFloat(localStorage.lng),
     };
     var map = new google.maps.Map(document.getElementById("map"), {
       zoom: 13,
-      center: center
+      center: center,
     });
     var marker, count;
     for (count = 0; count < locations.length; count++) {
       var infowindow = new google.maps.InfoWindow({
-        maxWidth: 500
+        maxWidth: 500,
       });
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(
@@ -60,7 +56,7 @@ function initMap() {
           locations[count][1]
         ),
         map: map,
-        label: `$${locations[count][5]}`
+        label: `$${locations[count][5]}`,
       });
       google.maps.event.addListener(
         marker,
@@ -72,7 +68,9 @@ function initMap() {
             <h4>$${locations[count][5]} per day</h4>
             <p>${locations[count][6]}</p>
             <p>Contact for reservation: ${locations[count][4]}</p>
-            <img class='photo' src='${locations[count][8]}' style='width: 450px'>
+            <img class='photo' src='${
+              locations[count][8]
+            }' style='width: 450px'>
             </div>`);
             infowindow.open(map, marker);
           };
@@ -82,30 +80,48 @@ function initMap() {
   });
 }
 
-$("#leaseForm").on("submit", function(event){
+$("#leaseForm").on("submit", function(event) {
   event.preventDefault();
 
   var address;
-  var houseNumber = $("#form_house").val().trim();
-  var street = $("#form_address").val().trim();
-  var city = $("#form_city").val().trim();
-  var state = $("#form_state").val().trim();
-  var zip = $("#zip-code").val().trim();
+  var houseNumber = $("#form_house")
+    .val()
+    .trim();
+  var street = $("#form_address")
+    .val()
+    .trim();
+  var city = $("#form_city")
+    .val()
+    .trim();
+  var state = $("#form_state")
+    .val()
+    .trim();
+  var zip = $("#zip-code")
+    .val()
+    .trim();
 
   address = `${houseNumber} ${street}, ${city}, ${state}`;
-  
+
   var geocoder = new google.maps.Geocoder();
   // eslint-disable-next-line prettier/prettier
-  geocoder.geocode({ "address": address }, function(results, status) {
+  geocoder.geocode({ address: address }, function(results, status) {
     // console.log(results);
     if (status === google.maps.GeocoderStatus.OK) {
       var lat = results[0].geometry.location.lat();
       var lng = results[0].geometry.location.lng();
       var parkingData = {
-        firstName: $("#first-name").val().trim(),
-        lastName: $("#last-name").val().trim(),
-        phone: $("#phone-number").val().trim(),
-        email: $("#email").val().trim(),
+        firstName: $("#first-name")
+          .val()
+          .trim(),
+        lastName: $("#last-name")
+          .val()
+          .trim(),
+        phone: $("#phone-number")
+          .val()
+          .trim(),
+        email: $("#email")
+          .val()
+          .trim(),
         house: houseNumber,
         street: street,
         city: city,
@@ -113,17 +129,25 @@ $("#leaseForm").on("submit", function(event){
         zip: zip,
         lat: lat,
         lng: lng,
-        numSpaces: $("#number-of-space").val().trim(),
-        spacePrice: $("#price").val().trim(),
-        spaceType: $("#parking-space-type").val().trim(),
-        photo: $("#parking-space-photo").val().trim(),
+        numSpaces: $("#number-of-space")
+          .val()
+          .trim(),
+        spacePrice: $("#price")
+          .val()
+          .trim(),
+        spaceType: $("#parking-space-type")
+          .val()
+          .trim(),
+        photo: $("#parking-space-photo")
+          .val()
+          .trim(),
       };
-    
+
       $.ajax({
         method: "POST",
         url: "/api/Parkings/",
-        data: parkingData
-      }).then(function(){
+        data: parkingData,
+      }).then(function() {
         console.log("Parking space posted!");
         initMap();
         location.reload();
