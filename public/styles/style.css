@@ -18,7 +18,7 @@
 
 #location-box-homepage {
     position: relative;
-    margin-left: 31%;
+    margin-left: 32%;
     margin-top: 3%;
     height: 120px;
 
@@ -30,10 +30,6 @@
 
 }
 
-/*::-webkit-input-placeholder {
-    font-size: 100%;
- 
-}*/
 
 option {
     font-size: 100%;
@@ -58,9 +54,6 @@ select {
     
 }
 
-
-
-
 /* Map Page CSS */
 #header {
     height: 80px;
@@ -70,14 +63,11 @@ select {
     border-width: 0.3px;
 }
 
-
 .logo {
     position: absolute;
-    left: 38%;
+    left: 40%;
     font-size: 60%;
-    padding: 10px 0;
-  
-    
+    padding: 10px 0;  
 }
 
 .logo h1 {
@@ -90,39 +80,36 @@ select {
     border-bottom-style: solid;
     border-bottom-color: rgb(193, 201, 193);
     border-width: 0.3px;
-
 }
 
-
-#location-input {
-    width: 100%;
-    margin-left: 15%;
-    margin-top: 3%;
-    text-indent: 15px;
+#location-box {
+    height: 30px;
+    border-style: none;
     border-color: dodgerblue;
     border-radius: 3px;
     border-width: 1px;
+    margin-top: 2%;
+    margin-left: 7%;
    
+   
+
 }
-
-#search-button {
-    position:absolute;
-    left: 100%;
-    margin-top: 3.5%;   
-    font-size: 15px;
-    color: dodgerblue;
-    background-color: white;
-    border-style: none;
-    padding: 0px;
-
+#location-input {
+    position: absolute;
+    height: 30px;
+    border-style: solid;
+    border-color: dodgerblue;
+    border-radius: 3px;
+    border-width: 1px;
 }
 
 #post-button {
+    
     font-size: 15px;
-    height: 28px;
-    margin-top: 0.7%;
-    padding-top: 1px;
-    margin-left: 52%;
+    height: 30px;
+    margin-top: 2%;
+    margin-left: 110%;
+    padding-top: 0.5%;
 }
 
 label {
@@ -134,53 +121,157 @@ a:hover {
     text-decoration: none;
 }
 
-/* Mdeia Query */
-@media only screen and (max-width: 600px) {
-    .logo {
-        left: 30%;
-    }
-
-    #slogan {
-       font-size: 170%;
-       padding-top: 15%;
-    }
-
-    #location-box-homepage {
-        position: relative;
-        margin-left: 31%;
-        margin-top: 8%;
-        height: 110px;
-
-    }
-
-
-    #search-button-homepage {
-        position: absolute;
-    font-size: 110%;
-    padding: 0;
-    top: 16%;
-    left: 82%;
-    background-color: transparent;
-    border-style: none;
-    color: dodgerblue;
-
-    }
-
-    #user-choice {
-        height: 60px;
-        text-indent: 0px;
-        font-size: 13px;
-    
-    }
-}
 
 #map {
-    height: 580px;
-    overflow: auto
+    height: 870px;
+    width: 100%;
+    overflow: auto;
 }
 
 #mapContainer {
     margin: 0px;
     padding: 0px;
 }
+
+/* Mdeia Query */
+@media only screen and (max-width: 600px) {
+    /*index page*/
+    .logo {
+        left: 30%;
+    }
+
+    #slogan {
+       font-size:150%;
+       padding-top: 15%;
+    }
+
+    #location-box-homepage {
+        position: relative;
+        width: 400px;
+        margin-left: 10%;
+        margin-top: 8%;
+        height: 110px;
+    }
+
+    #search-button-homepage {
+    position: absolute;
+    font-size: 100%;
+    padding: 0;
+    top: 16%;
+    left: 90%;
+    background-color: transparent;
+    border-style: none;
+    color: dodgerblue;
+    }
+
+    #user-choice {
+        height: 60px;
+        text-indent: 0px;
+        font-size: 100%;
+        
+    
+    }
+
+    /* map page*/
+
+    #location-box {
+        margin-left: 0;
+    }
+    #location-input {
+        width: 180px;
+        
+    }
+    #search-button {
+        left: 30%;
+    }
+    
+    #post-button {
+        width: 180px;
+        margin-left: 60%;
+        margin-top: -20%;
+    }
+
+   
+
+@media only screen and (min-width: 600px) {
+    /* index page */
+    .logo {
+        left: 30%;
+
+    }
+    #location-box-homepage {
+        position: relative;
+        margin-left: 10%;
+        margin-top: 8%;
+        height: 110px;
+
+    }
+    #user-choice {
+        width: 500px;
+        
+    }
+    #search-button-homepage  {
+        left: 190%;
+    }
+
+    /* map page */
+    #location-box {
+        margin-top: 4%;
+    }
+
+
+    #post-button {
+        margin-top: 4%;
+    }
+}
+
+    @media only screen and (min-width: 768px) {
+        /* index page */
+        .logo {
+            left: 35%;
+        }
+        #location-box-homepage {
+            margin-left: 20%;
+
+        }
+        #search-button-homepage  {
+            left: 160%;
+        }
+
+    }
+
+    @media only screen and (min-width: 992px) {
+        /* index page */
+        #search-button-homepage  {
+            left: 135%;
+        }
+
+    }
+
+    @media only screen and (min-width: 1200px) {
+        /* index page */
+        .logo {
+            left: 40%;
+        }
+        #location-box-homepage {
+            margin-top: 3%;
+            margin-left: 30%;
+        }
+        #search-button-homepage {
+            left: 95%;
+        }
+
+        /* map page */
+        #location-box {
+            margin-top: 2%;
+        }
+    
+        #post-button {
+            margin-top: 2%;
+        }
+
+    }
+
+
+    
 
