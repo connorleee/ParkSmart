@@ -40,15 +40,6 @@ html {
     text-shadow: rgb(255, 255, 255)   0rem 0rem 1.5rem;
 }
 
-#location-box-homepage {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    /* margin-left: 32%;
-    margin-top: 3%;
-    height: 120px; */
-}
-
 #user-choice {
     height: 60px;
     text-indent: 20px;
@@ -60,11 +51,7 @@ option {
 }
 
 #search-button-homepage {
-    position: absolute;
     font-size: 150%;
-    padding: 0;
-    /* top: 10%; */
-    right: 15%;
     background-color: transparent;
     border-style: none;
     color: dodgerblue;   
@@ -80,9 +67,6 @@ select {
 #header {
     height: 70px;
     position: relative;
-    /* border-bottom-style: solid;
-    border-bottom-color: rgb(193, 201, 193);
-    border-width: 0.3px; */
     background-color: white;
     box-shadow: 0rem 0rem 0.75rem;
 }
