@@ -1,67 +1,4 @@
-/* Index page CSS */
-
-#homepage-background {
-    background-image: url("../assets/img/background.jpg");
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-}
-
-#slogan {
-    color: rgb(213, 213, 230);
-    text-align: center;
-    padding-top: 10%;
-    font-family: 'Merriweather', serif;
-    font-size: 200%;
-
-}
-
-#location-box-homepage {
-    position: relative;
-    margin-left: 32%;
-    margin-top: 3%;
-    height: 120px;
-
-}
-
-#user-choice {
-    height: 60px;
-    text-indent: 20px;
-
-}
-
-
-option {
-    font-size: 100%;
-    color: gray;
-}
-
-#search-button-homepage {
-    position: absolute;
-    font-size: 150%;
-    padding: 0;
-    top: 10%;
-    left: 85%;
-    background-color: transparent;
-    border-style: none;
-    color: dodgerblue;
-   
-    
-}
-
-select {
-    font-family: 'FontAwesome', 'Second Font Name';
-    
-}
-
-/* Map Page CSS */
-#header {
-    height: 80px;
-    position: relative;
-    border-bottom-style: solid;
-    border-bottom-color: rgb(193, 201, 193);
-    border-width: 0.3px;
-}
+/* Global CSS */
 
 .logo {
     position: absolute;
@@ -72,6 +9,82 @@ select {
 
 .logo h1 {
     color: dodgerblue;
+}
+
+body,
+html {
+    min-height: 100%;
+}
+
+
+/* Index page CSS */
+
+#index-body {
+    background-image: 
+        linear-gradient(
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0.1)
+        ), 
+        url("../assets/img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#slogan {
+    color: rgb(8, 36, 63);
+    text-align: center;
+    padding-top: 10%;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    text-shadow: rgb(255, 255, 255)   0rem 0rem 1.5rem;
+}
+
+#location-box-homepage {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    /* margin-left: 32%;
+    margin-top: 3%;
+    height: 120px; */
+}
+
+#user-choice {
+    height: 60px;
+    text-indent: 20px;
+}
+
+option {
+    font-size: 100%;
+    color: gray;
+}
+
+#search-button-homepage {
+    position: absolute;
+    font-size: 150%;
+    padding: 0;
+    /* top: 10%; */
+    right: 15%;
+    background-color: transparent;
+    border-style: none;
+    color: dodgerblue;   
+}
+
+select {
+    font-family: 'FontAwesome', 'Second Font Name';
+}
+
+
+/* Map Page CSS */
+
+#header {
+    height: 70px;
+    position: relative;
+    /* border-bottom-style: solid;
+    border-bottom-color: rgb(193, 201, 193);
+    border-width: 0.3px; */
+    background-color: white;
+    box-shadow: 0rem 0rem 0.75rem;
 }
 
 #location-post {
@@ -90,10 +103,8 @@ select {
     border-width: 1px;
     margin-top: 2%;
     margin-left: 7%;
-   
-   
-
 }
+
 #location-input {
     position: absolute;
     height: 30px;
@@ -121,7 +132,6 @@ a:hover {
     text-decoration: none;
 }
 
-
 #map {
     height: 870px;
     width: 100%;
@@ -133,9 +143,9 @@ a:hover {
     padding: 0px;
 }
 
-/* Mdeia Query */
+/* Media Query */
+/*
 @media only screen and (max-width: 600px) {
-    /*index page*/
     .logo {
         left: 30%;
     }
@@ -172,7 +182,6 @@ a:hover {
     
     }
 
-    /* map page*/
 
     #location-box {
         margin-left: 0;
@@ -190,11 +199,10 @@ a:hover {
         margin-left: 60%;
         margin-top: -20%;
     }
-
+}
    
 
 @media only screen and (min-width: 600px) {
-    /* index page */
     .logo {
         left: 30%;
 
@@ -214,64 +222,56 @@ a:hover {
         left: 190%;
     }
 
-    /* map page */
+
     #location-box {
         margin-top: 4%;
     }
-
 
     #post-button {
         margin-top: 4%;
     }
 }
 
-    @media only screen and (min-width: 768px) {
-        /* index page */
-        .logo {
-            left: 35%;
-        }
-        #location-box-homepage {
-            margin-left: 20%;
-
-        }
-        #search-button-homepage  {
-            left: 160%;
-        }
+@media only screen and (min-width: 768px) {
+    .logo {
+        left: 35%;
+    }
+    #location-box-homepage {
+        margin-left: 20%;
 
     }
-
-    @media only screen and (min-width: 992px) {
-        /* index page */
-        #search-button-homepage  {
-            left: 135%;
-        }
-
+    #search-button-homepage  {
+        left: 160%;
     }
 
-    @media only screen and (min-width: 1200px) {
-        /* index page */
-        .logo {
-            left: 40%;
-        }
-        #location-box-homepage {
-            margin-top: 3%;
-            margin-left: 30%;
-        }
-        #search-button-homepage {
-            left: 95%;
-        }
+}
 
-        /* map page */
-        #location-box {
-            margin-top: 2%;
-        }
-    
-        #post-button {
-            margin-top: 2%;
-        }
-
+@media only screen and (min-width: 992px) {
+    #search-button-homepage  {
+        left: 135%;
     }
 
+}
 
-    
+@media only screen and (min-width: 1200px) {
+    .logo {
+        left: 40%;
+    }
+    #location-box-homepage {
+        margin-top: 3%;
+        margin-left: 30%;
+    }
+    #search-button-homepage {
+        left: 95%;
+    }
 
+    #location-box {
+        margin-top: 2%;
+    }
+
+    #post-button {
+        margin-top: 2%;
+    }
+
+}
+*/
