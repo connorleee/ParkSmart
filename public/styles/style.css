@@ -73,8 +73,8 @@ select {
 #location-post {
     height: 50px;
     margin: 0;
-    border-bottom-style: solid;
-    border-bottom-color: rgb(193, 201, 193);
+    /* border-bottom-style: solid;
+    border-bottom-color: rgb(193, 201, 193); */
     border-width: 0.3px;
 }
 
@@ -98,145 +98,16 @@ a:hover {
 }
 
 #map {
-    height: 870px;
+    height: 700px;
+    /* height: 100%; */
     width: 100%;
     overflow: auto;
 }
 
-#mapContainer {
-    margin: 0px;
-    padding: 0px;
-}
-
-/* Media Query */
-/*
-@media only screen and (max-width: 600px) {
-    .logo {
-        left: 30%;
-    }
-
-    #slogan {
-       font-size:150%;
-       padding-top: 15%;
-    }
-
-    #location-box-homepage {
-        position: relative;
-        width: 400px;
-        margin-left: 10%;
-        margin-top: 8%;
-        height: 110px;
-    }
-
-    #search-button-homepage {
+.footer {
     position: absolute;
-    font-size: 100%;
-    padding: 0;
-    top: 16%;
-    left: 90%;
-    background-color: transparent;
-    border-style: none;
-    color: dodgerblue;
-    }
-
-    #user-choice {
-        height: 60px;
-        text-indent: 0px;
-        font-size: 100%;
-        
-    
-    }
-
-
-    #location-box {
-        margin-left: 0;
-    }
-    #location-input {
-        width: 180px;
-        
-    }
-    #search-button {
-        left: 30%;
-    }
-    
-    #post-button {
-        width: 180px;
-        margin-left: 60%;
-        margin-top: -20%;
-    }
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background-color: rgb(187, 187, 187);
 }
-   
-
-@media only screen and (min-width: 600px) {
-    .logo {
-        left: 30%;
-
-    }
-    #location-box-homepage {
-        position: relative;
-        margin-left: 10%;
-        margin-top: 8%;
-        height: 110px;
-
-    }
-    #user-choice {
-        width: 500px;
-        
-    }
-    #search-button-homepage  {
-        left: 190%;
-    }
-
-
-    #location-box {
-        margin-top: 4%;
-    }
-
-    #post-button {
-        margin-top: 4%;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    .logo {
-        left: 35%;
-    }
-    #location-box-homepage {
-        margin-left: 20%;
-
-    }
-    #search-button-homepage  {
-        left: 160%;
-    }
-
-}
-
-@media only screen and (min-width: 992px) {
-    #search-button-homepage  {
-        left: 135%;
-    }
-
-}
-
-@media only screen and (min-width: 1200px) {
-    .logo {
-        left: 40%;
-    }
-    #location-box-homepage {
-        margin-top: 3%;
-        margin-left: 30%;
-    }
-    #search-button-homepage {
-        left: 95%;
-    }
-
-    #location-box {
-        margin-top: 2%;
-    }
-
-    #post-button {
-        margin-top: 2%;
-    }
-
-}
-*/
