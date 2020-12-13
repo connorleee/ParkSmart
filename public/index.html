@@ -66,47 +66,76 @@
     <title>ParkSmart</title>
   </head>
 
-  <body>
-    <div class="fluid-container">
-      <div class="row">
-        <div id="header" class="col-sm-12">
+  <body id="index-body">
+    <div class="container-fluid">
+      <div class="row justify-content-md-center">
+        <div id="header" class="col-md-12">
           <a class="logo">
             <h1>
               ParkSmart
-              <span style="font-size: 48px; color: Dodgerblue;"
-                ><i class="fas fa-car-side"></i
-              ></span>
+              <span><i class="fas fa-car-side"></i></span>
             </h1>
           </a>
         </div>
       </div>
-    </div>
-
-    <div class="fluid-container" id="homepage-background">
-      <h3 id="slogan">Make money with space. Save money with parking.</h3>
-
-      <form class="col-sm-4" id="location-box-homepage">
-        <div class="form-group">
-          <input
-            class="form-control"
-            list="current-location"
-            id="user-choice"
-            placeholder="Enter zip code or choose current location"
-          />
-          <datalist id="current-location">
-            <option value="Current Location"> </option>
-          </datalist>
-
-          <button
-            class="btn btn-info"
-            id="search-button-homepage"
-            role="button"
-            onclick="getInput()"
-          >
-            <i class="fas fa-search"></i>
-          </button>
+  
+      <div class="container-fluid">
+        <div class="row justify-content-md-center">
+          <h3 id="slogan">Make money with space. Save money with parking.</h3>
         </div>
-      </form>
+  
+        <br>
+
+        <div class="row justify-content-md-center">
+          <div class="col-md-8">
+            <div class="input-group mb-3">
+              <input 
+                type="text" 
+                class="form-control"
+                list="current-location"
+                id="user-choice"
+                placeholder="Enter zip code or choose current location"
+              />
+              <datalist id="current-location">
+                <option value="Current Location"> </option>
+              </datalist>
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary btn-info"
+                  id="search-button-homepage"
+                  type="button"
+                  onclick="getInput()"
+                >
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- <form>
+            <div class="form-row align-items-center">
+              <div class="col-md-8">
+                <input
+                  class="form-control"
+                  list="current-location"
+                  id="user-choice"
+                  placeholder="Enter zip code or choose current location"
+                />
+                <datalist id="current-location">
+                  <option value="Current Location"> </option>
+                </datalist>
+              </div>
+              <button
+                class="btn btn-info col-auto"
+                id="search-button-homepage"
+                role="button"
+                onclick="getInput()"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </form> -->
+        </div>
+      </div>
     </div>
   </body>
 </html>
