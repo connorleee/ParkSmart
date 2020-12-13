@@ -88,24 +88,6 @@ select {
     margin-left: 7%;
 }
 
-#location-input {
-    position: absolute;
-    height: 30px;
-    border-style: solid;
-    border-color: dodgerblue;
-    border-radius: 3px;
-    border-width: 1px;
-}
-
-#post-button {
-    
-    font-size: 15px;
-    height: 30px;
-    margin-top: 2%;
-    margin-left: 110%;
-    padding-top: 0.5%;
-}
-
 label {
     color: gray;
 }

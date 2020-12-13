@@ -53,36 +53,56 @@
   </head>
 
   <body>
-    <div class="fluid-container">
-      <div class="row">
-        <div id="header" class="col-sm-12">
+    <div class="container-fluid">
+      <div class="row justify-content-md-center">
+        <div id="header" class="col-md-12">
           <a href="index.html" class="logo">
             <h1>
               ParkSmart
-              <span style="font-size: 48px; color: Dodgerblue;"
-                ><i class="fas fa-car-side"></i
-              ></span>
+              <span><i class="fas fa-car-side"></i></span>
             </h1>
           </a>
         </div>
       </div>
 
-      <div class="row" id="location-post">
+      <div class="row align-items-center justify-content-between mt-3 mb-3" id="location-post">
         <!--location box which will load current city, state or zip code from local storage-->
-        <form class="col-sm-4">
-          <div class="form-group" id="location-box">
+        <!-- <form class="col-md-4">
+          <div class="form-group" id="location-box"> -->
             <!-- <button id="search-button"><i class="fas fa-search"></i></button> -->
-            <input class="text-center" type="text" id="location-input" />
+            <!-- <input class="text-center" type="text" id="location-input" />
           </div>
-        </form>
+        </form> -->
+        <div class="col-md-4">
+          <div class="input-group mb-3">
+            <input 
+              type="text" 
+              class="form-control"
+              list="current-location"
+              id="location-input"
+              placeholder="Enter zip code or choose current location"
+            />
+            <datalist id="current-location">
+              <option value="Current Location"> </option>
+            </datalist>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary btn-info"
+                id="search-button-homepage"
+                type="button"
+                onclick="getInput()"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>  
+        </div>
 
         <!--Button trigger modal-->
-        <div class="col-sm-4">
+        <div class="col-md-4">
           <button
             class="btn btn-outline-primary col-sm-10"
             data-toggle="modal"
             data-target=".post-form-lg"
-            id="post-button"
           >
             Post Parking Space
           </button>
