@@ -79,13 +79,39 @@
         </div>
       </div>
   
-      <div class="" id="homepage-body">
+      <div class="container-fluid">
         <div class="row justify-content-md-center">
           <h3 id="slogan">Make money with space. Save money with parking.</h3>
         </div>
   
+        <br>
+
         <div class="row justify-content-md-center">
-          <form>
+          <div class="col-md-8">
+            <div class="input-group mb-3">
+              <input 
+                type="text" 
+                class="form-control"
+                list="current-location"
+                id="user-choice"
+                placeholder="Enter zip code or choose current location"
+              />
+              <datalist id="current-location">
+                <option value="Current Location"> </option>
+              </datalist>
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary btn-info"
+                  id="search-button-homepage"
+                  type="button"
+                  onclick="getInput()"
+                >
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- <form>
             <div class="form-row align-items-center">
               <div class="col-md-8">
                 <input
@@ -107,7 +133,7 @@
                 <i class="fas fa-search"></i>
               </button>
             </div>
-          </form>
+          </form> -->
         </div>
       </div>
     </div>

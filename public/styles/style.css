@@ -52,8 +52,7 @@ option {
 
 #search-button-homepage {
     font-size: 150%;
-    background-color: transparent;
-    border-style: none;
+    background-color: white;
     color: dodgerblue;   
 }
 
