@@ -53,36 +53,56 @@
   </head>
 
   <body>
-    <div class="fluid-container">
-      <div class="row">
-        <div id="header" class="col-sm-12">
+    <div class="container-fluid">
+      <div class="row justify-content-md-center">
+        <div id="header" class="col-md-12">
           <a href="index.html" class="logo">
             <h1>
               ParkSmart
-              <span style="font-size: 48px; color: Dodgerblue;"
-                ><i class="fas fa-car-side"></i
-              ></span>
+              <span><i class="fas fa-car-side"></i></span>
             </h1>
           </a>
         </div>
       </div>
 
-      <div class="row" id="location-post">
+      <div class="row align-items-center justify-content-between mt-3 mb-3" id="location-post">
         <!--location box which will load current city, state or zip code from local storage-->
-        <form class="col-sm-4">
-          <div class="form-group" id="location-box">
+        <!-- <form class="col-md-4">
+          <div class="form-group" id="location-box"> -->
             <!-- <button id="search-button"><i class="fas fa-search"></i></button> -->
-            <input class="text-center" type="text" id="location-input" />
+            <!-- <input class="text-center" type="text" id="location-input" />
           </div>
-        </form>
+        </form> -->
+        <div class="col-md-4">
+          <div class="input-group">
+            <input 
+              type="text" 
+              class="form-control"
+              list="current-location"
+              id="location-input"
+              placeholder="Enter zip code or choose current location"
+            />
+            <datalist id="current-location">
+              <option value="Current Location"> </option>
+            </datalist>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary btn-info"
+                id="search-button-homepage"
+                type="button"
+                onclick="getInput()"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>  
+        </div>
 
         <!--Button trigger modal-->
-        <div class="col-sm-4">
+        <div class="col-md-4">
           <button
             class="btn btn-outline-primary col-sm-10"
             data-toggle="modal"
             data-target=".post-form-lg"
-            id="post-button"
           >
             Post Parking Space
           </button>
@@ -323,31 +343,41 @@
       </div>
     </div>
 
-    <div class="container-fluid" id="mapContainer">
-      <div id="map"></div>
-
-      <!--Javascript File-->
-      <script src="./js/map.js"></script>
-      <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9iIFn8lV0MJYxNSCDqg44KTOrxWww8d8&callback=initMap"
-        async
-        defer
-      ></script>
-
-      <!-- Load React. -->
-      <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-      <script
-        src="https://unpkg.com/react@16/umd/react.development.js"
-        crossorigin
-      ></script>
-      <script
-        src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
-        crossorigin
-      ></script>
-      <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-
-      <!-- Load our React component. -->
-      <!-- <script src="like_button.js"></script> -->
+    <div class="container-fluid" id="map-container">
+      <div class="row d-flex align-items-stretch">
+        <div class="col-md-12">
+          <div id="map" class=""></div>
+        </div>
+      </div>
     </div>
+
+    <footer class="footer d-flex">
+      <div class="container d-flex justify-content-center align-items-center">
+        <span>ParkSmart</span>
+      </div>
+    </footer>
+
+    <!--Javascript File-->
+    <script src="./js/map.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9iIFn8lV0MJYxNSCDqg44KTOrxWww8d8&callback=initMap"
+      async
+      defer
+    ></script>
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!-- Load our React component. -->
+    <!-- <script src="like_button.js"></script> -->
   </body>
 </html>
